@@ -1,0 +1,189 @@
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
+
+/*-- scss:defaults --*/
+
+// colors
+$teal-light1: #fcfcfc;
+$teal-light2: #745775;
+$teal:        #88398A;
+$teal-dark1:  #4c074d;
+$teal-dark2:  #76043d;
+$orange:      #9ac6c5;
+$orange-light:#a5e6ba;
+$orange-dark: #0cb397;
+
+// Background of the presentation
+$backgroundColor: $teal-light1;
+
+// Primary/body text
+$mainFont: 'Atkinson Hyperlegible', 'Nunito', sans-serif;
+$mainFontSize: 35px;
+
+// Vertical spacing between blocks of text
+$blockMargin: 0.3em;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: 'Domine', serif;
+$headingColor: $teal;
+$headingLineHeight: 1em;
+$headingLetterSpacing: 2px;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$headingFontWeight: bold;
+
+$heading1Size: 2.5em;
+$heading2Size: 2.2em;
+$heading3Size: 1.5em;
+$heading4Size: 1.0em;
+
+$codeFont: 'Fira Mono', monospace;
+$code-block-font-size: 0.8em;
+
+// Links and actions
+$linkColor: $orange-dark;
+$linkColorHover: darken( $linkColor, 20% );
+
+section.has-dark-background a, section.has-dark-background a:hover {
+    color: #bfe4fe !important;
+}
+
+// Text selection
+$selectionBackgroundColor: $teal;
+$selectionColor: #fff;
+
+// Contrast
+$min-contrast-ratio:   7;
+
+// Start using css here //
+
+// Font classes
+
+.warning {
+  color: #990000;
+}
+
+.reveal a:not([role="tab"]) {
+  text-decoration: underline !important;
+}
+
+.h2 {
+  padding-bottom: 3em !important;
+}
+
+.subtitle {
+  font-size: $heading3Size;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.reveal .slide h1, 
+.reveal .slide h2 {
+  margin-top: 1.5em; 
+  margin-bottom: 1.1em; 
+}
+
+
+
+#title-slide .subtitle {
+  margin-top: 6rem;
+  line-height: 1.8;
+}
+
+.quarto-title-author-name {
+  font-size: $heading3Size;
+}
+
+.reveal div.sourceCode {
+  margin-bottom: 15px !important;
+}
+
+// Table
+
+.reveal table {
+  margin-left: 0!important;
+}
+
+// Footer
+
+.reveal .footer {
+  font-size: 0.8em;
+  color: $orange-dark;
+}
+
+// Containers
+
+.reveal .slide .v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+}
+
+// Alignment
+
+.center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Background color sections
+
+.section {
+  &:is(.slide-background) {
+  background: $orange-dark;
+  }
+}
+
+.demo {
+  &:is(.slide-background) {
+  background: $teal-dark2;
+  }
+}
+
+.exercise {
+  &:is(.slide-background) {
+  background: $teal-dark1;
+  }
+}
+
+// Fontawesome
+
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+  color: $teal;
+  line-height: 1.5;
+}
+
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: $teal;
+  line-height: 1.2;
+}
+
+// Slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+// Class for larger paragraph font size on specific slides
+.large-font-slide {
+  p {
+    font-size: 1.5em; // Adjust this value as needed
+    line-height: 1.8; // Optional: improve readability
+  }
+}
+
+.reveal h1.compact-title,
+.reveal h2.compact-title {
+  margin-top: 0em !important; // Ajusta según la reducción de espacio que desees
+  margin-bottom: 0em !important;
+}

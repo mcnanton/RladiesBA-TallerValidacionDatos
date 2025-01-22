@@ -1,0 +1,32 @@
+---
+title: "Instrucciones de configuración"
+format: html
+execute: 
+  eval: false
+---
+
+Antes del taller, por favor completa los siguientes pasos:
+
+#### 1. Software
+
+Descargá e instalá las últimas versiones de R, RStudio y Quarto:
+
+-   R 4.2.3 o superior: <https://cran.r-project.org>
+-   RStudio 2024.04.0 or superior: <https://posit.co/download/rstudio-desktop>
+-   
+
+#### 2. Paquetes
+
+Instalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:
+
+
+```{r}
+
+paquetes_lista <- c(
+  "", "", ""
+)
+install.packages(paquetes_lista)
+
+```
+#### 3. Ejercicios
+

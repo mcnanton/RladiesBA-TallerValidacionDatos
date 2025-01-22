@@ -1,0 +1,97 @@
+## Mientras esperás a que comencemos...
+
+Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:
+
+[jformoso.github.io/intro-quarto/setup.html](https://jformoso.github.io/quarto-rladiesBA/setup.html).
+
+## Agradecimientos
+
+**Este taller y sus materiales se basaron en:**
+
+\
+
+**Auspician RLadies Buenos Aires:**
+
+::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="20%"}
+![](images/rladies-logo.png){style="border-radius:1em;margin-top:auto" width="170"}
+:::
+
+::: {.column width="40%"}
+![](images/rconsortium.png){style="border-radius:1em;margin-top:auto"}
+:::
+
+::: {.column width="20%"}
+![](images/clipboard-672291485.png)
+:::
+
+::: {.column width="10%"}
+:::
+:::
+
+## Codigo de conducta
+
+Todos los espacios de participación de R-Ladies Global y RLadies Buenos Aires, incluyendo reuniones presenciales o virtuales, Twitter, Slack y listas de correo se rigen por el [Código de conducta de RLadies](https://github.com/rladies/.github/blob/master/CODE_OF_CONDUCT.md#spanish).
+
+## Licencia
+
+Estos materiales están publicados bajo la licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/), la cual implica:
+
+-   Atribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.
+-   Uso no comercial: No está permitido usar el material con fines comerciales.
+-   Compartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia.
+
+{{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}
+
+## 
+
+::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="20%"}
+![](images/betsy2.png){style="border-radius:1em;margin-top:auto"}
+
+Betsabé Cohen\
+
+![](images/moni.jpg){style="border-radius:1em;margin-top:auto"}
+
+Mónica Alonso
+:::
+
+::: {.column width="20%"}
+![](images/kari.jpg){style="border-radius:1em;margin-top:auto"}
+
+Karina Bartolomé
+
+![](images/vir.jpg){style="border-radius:1em;margin-top:auto"}
+
+Virginia García Alonso
+:::
+
+::: {.column width="20%"}
+![](images/jime.png){style="border-radius:1em;margin-top:auto"}
+
+Jimena Saucedo
+
+![](images/pri.jpg){style="border-radius:1em;margin-top:auto"}
+
+Priscilla Minotti
+:::
+
+::: {.column width="20%"}
+![](images/maria.jpg){style="border-radius:1em;margin-top:auto"}
+
+María Nanton
+
+![](images/jesi.png){style="border-radius:1em;margin-top:auto" width="270"}
+
+Jesica Formoso
+:::
+
+::: {.column width="10%"}
+:::
+:::

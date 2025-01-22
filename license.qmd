@@ -1,0 +1,17 @@
+---
+title: "Licencia"
+format: html
+---
+
+© 2024 Autora
+
+Estos materiales están publicados bajo la licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/), la cual implica:
+
+-   Atribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.
+-   Uso no comercial: No está permitido usar el material con fines comerciales.
+-   Compartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia.
+
+{{< fa brands creative-commons size=2x >}} 
+{{< fa brands creative-commons-by size=2x >}} 
+{{< fa brands creative-commons-nc size=2x >}} 
+{{< fa brands creative-commons-sa size=2x >}}

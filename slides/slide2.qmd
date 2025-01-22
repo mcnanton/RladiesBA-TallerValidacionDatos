@@ -1,0 +1,55 @@
+# Archivos `.qmd`
+
+## Tipos de contenido
+
+-   Encabezado YAML
+-   Bloques de código (chunks)
+-   Texto markdown
+
+## Tipos de contenido
+
+::: columns
+::: {.column width="30%"}
+-   **Encabezado YAML**
+
+    -   Enmarcado por - - -
+    -   Define las configuraciones y metadatos del documento.
+    -   Sintaxis tipo clave: valor (ej. format: html)
+:::
+
+::: {.column width="70%"}
+![](images/encabezado-yaml.jpg){fig-align="center"}
+:::
+:::
+
+## Tipos de contenido
+
+::: columns
+::: {.column width="30%"}
+-   **Bloques de código (chunks)**
+
+    -   Permiten ejecutar código dentro del documento {{< fa play >}}
+    -   Se definen con tres tildes invertidas (\`\`\`) seguidas del lenguaje de programación.
+:::
+
+::: {.column width="70%"}
+![](images/bloque-codigo.jpg){fig-align="center"}
+:::
+:::
+
+## Tipos de contenido
+
+::: columns
+::: {.column width="30%"}
+-   **Texto markdown**
+    -   Permite incluir encabezados de sección, e integrar hipervínculos, imágenes, código y resultados en el texto.
+:::
+
+::: {.column width="70%"}
+![](images/texto-markdown.jpg){fig-align="center"}
+:::
+:::
+
+## Modos del editor de RStudio
+
+![](images/editor.jpg){fig-align="center"}

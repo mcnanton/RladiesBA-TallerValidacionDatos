@@ -1,0 +1,58 @@
+---
+title: "Titulo del taller"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Fecha y ubicación
+
+📆 
+
+⏰18
+
+🗺️
+
+🐱 [Repositorio en GitHub]()
+
+\
+
+## Sobre este taller
+
+
+experiencia previa con Quarto.
+
+## Objetivos de aprendizaje
+
+-   
+
+## Instructoras
+
+![](images/perfil1.png){style="float:left;padding: 0 10px 0 0; border-radius:50%"
+width="149"}
+
+[Autora](url)
+es ... Además, forma parte de las organizadoras de
+[RLadies Buenos Aires](https://rladiesba.netlify.app/) 💜 y es
+colaboradora en [MetaDocencia](https://www.metadocencia.org/) 🍎.
+
+\
+
+## Código de Conducta
+
+R-Ladies se dedica a proporcionar una experiencia libre de acoso para
+todes. [**Conocé el Código de
+Conducta**](https://github.com/rladies/.github/blob/master/CODE_OF_CONDUCT.md#spanish)
+que se aplica en todos los espacios de participación de R-Ladies Global
+y del capitulo, incluyendo reuniones presenciales o virtuales, Twitter,
+Slack, listas de correo, tanto online como offline.
+
+## Agradecimientos
+
+Este taller fue auspiciado por:
+
+[![](slides/images/rladies-logo.png){width="100"}](https://rladies.org/)
+
+[![](slides/images/rconsortium.png){width="366"}](https://r-consortium.org/)
+

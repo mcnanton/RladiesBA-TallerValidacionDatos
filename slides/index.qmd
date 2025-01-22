@@ -1,0 +1,24 @@
+---
+title: "Titulo"
+author: "Autora<br>RLadies Buenos Aires"
+logo: "images/logo-rladies-BA.png"
+format: 
+  revealjs: 
+    width: 1600
+    height: 900  
+    theme: slides.scss
+    highlight-style: a11y
+    transition: fade
+    slide-number: true
+execute:
+  echo: true
+df-print: kable
+---
+
+
+
+{{< include intro.qmd >}}
+{{< include slide1.qmd >}}
+{{< include slide2.qmd >}}
+{{< include rladies.qmd >}}
+

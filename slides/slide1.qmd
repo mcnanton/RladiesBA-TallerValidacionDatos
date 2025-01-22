@@ -1,0 +1,56 @@
+# Quarto {.section}
+
+## ¿Qué es Quarto?
+
+::: {.incremental}
+
+-   Un sistema de publicación científica y técnica de código abierto.
+
+-   Combina texto, código y resultados en un solo documento, permitiendo la creación de reportes totalmente reproducibles.
+
+-   Permite generar artículos, presentaciones, tableros, páginas web, blogs, libros en en múltiples formatos (HTML, pdf, MS Word, ppt).
+
+:::
+
+## Diferencias con RMarkdown
+
+::: {.incremental}
+
+-   Soporte multilenguaje: R, python, Julia, JavaScript, Observable.
+-   Unifica funcionalidades: combina en una única herramienta las capacidades de varios paquetes del ecosistema de RMarkdown. Facilita la generación de múltiples formatos.
+-   Incluye una interfaz de línea de comando amigable para renderizar documentos.
+:::
+
+## Diferencias con RMarkdown
+
+![Ilustración de la presentación "Hello, Quarto" de Julia Lowndes y Mine Çetinkaya-Rundel, presentada en la Conferencia de RStudio 2022 realizada por Allison Horst.](images/horst-qmd-render-schema.png)
+
+## Convertir un `.Rmd` a `.qmd`
+
+1.  Cambiar la extensión del archivo de `.Rmd` a `.qmd`.
+2.  En el YAML, cambiar `output:` por `format:`.
+3.  Convertir los headers de los chunks con `knitr::convert_chunk_header()`
+
+::: columns
+::: {.column width="50%"}
+**R Markdown**
+
+```{r, label=rmarkdown, eval=FALSE}
+#| echo: fenced
+# código
+```
+:::
+
+::: {.column width="50%"}
+**Quarto**
+
+```{r}
+#| label: quarto
+#| echo: fenced
+#| eval: false
+
+# código
+```
+:::
+:::
+
