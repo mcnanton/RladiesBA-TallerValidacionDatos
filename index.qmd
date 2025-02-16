@@ -8,36 +8,57 @@ editor:
 
 ## Fecha y ubicación
 
-📆 
+📆 19 de febrero, 2025
 
-⏰18
+⏰18:30 pm - 20:30 pm Argentina (UTC -3)
 
-🗺️
+🗺️ Online (el link de zoom se compartirá el mismo día)
 
-🐱 [Repositorio en GitHub]()
+🐱 [Repositorio en
+GitHub](https://github.com/mcnanton/RladiesBA-TallerValidacionDatos)
 
 \
 
 ## Sobre este taller
 
-
-experiencia previa con Quarto.
+El taller [¡NA pasa nada!: aprende a validar datos con
+R](https://www.meetup.com/rladies-buenos-aires/events/305989967/) nos
+presentará 4 bibliotecas con funciones específicas para validar calidad
+de datos: **validate**, **assertr**, **data.validator** y
+**pointblank**. Aprenderemos como usar estas herramientas para evaluar
+la calidad de un dataset de manera rápida, automática y descriptiva en
+cuanto a su integridad, completitud, consistencia y exactitud.
 
 ## Objetivos de aprendizaje
 
--   
+-   Conocer un framework de evaluación de calidad de datos
+    inmediatamente aplicable mediante el uso de R
+
+-   Familiarizarse con las bibliotecas **validate**, **assertr**,
+    **data.validator** y **pointblank**
+
+-   Aprender sobre las funciones predicado y cómo utilizarlas para la
+    evaluación univariada, multivariada y a nivel dataset
+
+-   Entender las salidas de información de las 4 bibliotecas y qué tipo
+    de reporte puede generarse con cada una
 
 ## Instructoras
 
-![](images/perfil1.png){style="float:left;padding: 0 10px 0 0; border-radius:50%"
-width="149"}
+![](images/maria_cristina_nanton.jpeg){style="float:left;padding: 0 10px 0 0; border-radius:50%"}
 
-[Autora](url)
-es ... Además, forma parte de las organizadoras de
+[María Nanton](https://rladiesba.netlify.app/author/maria-nanton/) es
+Data Scientist, maestranda en Data Mining y coordinadora del equipo de
+Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas
+en Salud de la Ciudad de Buenos Aires. Además, es organizadora de
 [RLadies Buenos Aires](https://rladiesba.netlify.app/) 💜 y es
 colaboradora en [MetaDocencia](https://www.metadocencia.org/) 🍎.
 
-\
+Betsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda
+en estadística de la Universidad Nacional de Tres de Febrero. Además, es
+organizadora de [RLadies Buenos Aires](https://rladiesba.netlify.app/)
+💜 y del [Núcleo de Innovación
+Social](https://www.linkedin.com/company/nucleois/?originalSubdomain=ar).\
 
 ## Código de Conducta
 
@@ -55,4 +76,3 @@ Este taller fue auspiciado por:
 [![](slides/images/rladies-logo.png){width="100"}](https://rladies.org/)
 
 [![](slides/images/rconsortium.png){width="366"}](https://r-consortium.org/)
-

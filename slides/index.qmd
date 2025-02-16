@@ -1,6 +1,6 @@
 ---
-title: "Titulo"
-author: "Autora<br>RLadies Buenos Aires"
+title: "¡NA pasa nada!: aprende a validar datos con R"
+author: "María Nanton y Betsy Cohen<br>RLadies Buenos Aires"
 logo: "images/logo-rladies-BA.png"
 format: 
   revealjs: 

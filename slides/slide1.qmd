@@ -1,56 +1,144 @@
-# Quarto {.section}
+# Introducción a la validación de datos {.section}
 
-## ¿Qué es Quarto?
+## Herramienta 1: validate
 
-::: {.incremental}
+::: incremental
+-   MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)
+-   Apariencia
 
--   Un sistema de publicación científica y técnica de código abierto.
-
--   Combina texto, código y resultados en un solo documento, permitiendo la creación de reportes totalmente reproducibles.
-
--   Permite generar artículos, presentaciones, tableros, páginas web, blogs, libros en en múltiples formatos (HTML, pdf, MS Word, ppt).
-
+``` r
+##   name items passes fails nNA error warning        expression
+## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)
+## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)
+## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)
+```
 :::
 
-## Diferencias con RMarkdown
+## Herramienta 2: assertr
 
-::: {.incremental}
+::: incremental
+![](images/hex_assertr.png)
 
--   Soporte multilenguaje: R, python, Julia, JavaScript, Observable.
--   Unifica funcionalidades: combina en una única herramienta las capacidades de varios paquetes del ecosistema de RMarkdown. Facilita la generación de múltiples formatos.
--   Incluye una interfaz de línea de comando amigable para renderizar documentos.
+-   Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.
+
+-   Apariencia
+
+``` r
+## verification [mpg >= 0] failed! (1 failure)
+## 
+##     verb redux_fn predicate column index value
+## 1 verify       NA  mpg >= 0     NA     5    NA
+```
 :::
 
-## Diferencias con RMarkdown
+## Herramienta 3: data.validator
 
-![Ilustración de la presentación "Hello, Quarto" de Julia Lowndes y Mine Çetinkaya-Rundel, presentada en la Conferencia de RStudio 2022 realizada por Allison Horst.](images/horst-qmd-render-schema.png)
+::: incremental
+![](images/hex_datavalidator.png)
 
-## Convertir un `.Rmd` a `.qmd`
+-   Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.
 
-1.  Cambiar la extensión del archivo de `.Rmd` a `.qmd`.
-2.  En el YAML, cambiar `output:` por `format:`.
-3.  Convertir los headers de los chunks con `knitr::convert_chunk_header()`
+-   Apariencia
+
+``` r
+#> Validation summary: 
+#>  Number of successful validations: 1
+#>  Number of validations with warnings: 1
+#>  Number of failed validations: 4
+#> 
+#> Advanced view: 
+#> 
+#> 
+#> |table_name |description                                       |type    | total_violations|
+#> |:----------|:-------------------------------------------------|:-------|----------------:|
+#> |mtcars     |Column drat has only positive values              |success |               NA|
+#> |mtcars     |Column drat has only values larger than 3         |error   |                4|
+#> |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|
+#> |mtcars     |For wt and qsec we have: abs(col) < 2 * sd(col)   |error   |                4|
+#> |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|
+#> |mtcars     |vs and am values should equal 3 or 4              |warning |               24|
+```
+
+![](images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp)
+:::
+
+## Herramienta 4: pointblank
+
+::: incremental
+![](images/hex_pointblank.svg)
+
+-   Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.
+
+-   Apariencia
+
+    ![](images/agent_report.png)
+:::
+
+## ¿Conocen alguna de ellas?
+
+## ¿En qué difieren estas bibliotecas?
+
+::: incremental
+-   Materiales de apoyo, tutoriales y artículos sobre cada una
+-   Funciones específicas que cada uno provee, especialmente **funciones de predicado** (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)
+-   Tipo de reportes que generan
+-   Formato de reportes generados
+:::
+
+## ¿Por qué creen que tiene sentido usar una biblioteca de este tipo?
+
+# Un framework para la evaluación de la calidad de los datos {.section}
+
+## "Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R"
+
+Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. "Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R". BMC Med. Res. Methodol. 2021, 21, 63. \[[CrossRef](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7)\]
+
+::: incremental
+-   **Integridad**: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?
+-   **Completitud**: ¿En qué grado los valores esperados están presentes?
+-   **Consistencia**: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?
+-   **Exactitud**: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?
+:::
+
+## 
+
+![](images/dominios_paquetes.png)
+
+## A validar!
+
+## Para leer más
+
+-   assertr <https://docs.ropensci.org/assertr/>
+
+-   validate <https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html>
+
+-   data.validator <https://appsilon.github.io/data.validator/index.html>
+
+-   pointblank <https://rstudio.github.io/pointblank/index.html>
+
+# Antes de que te vayas..
+
+## Seguinos
+
+{{< fa brands instagram >}} [\@rladiesba](https://www.instagram.com/rladiesba/)\
+{{< fa brands twitter >}} [\@RLadiesBA](https://x.com/RLadiesBA)\
+{{< fa brands meetup >}} [RLadies Buenos Aires](https://www.meetup.com/es/rladies-buenos-aires/)\
+{{< fa brands youtube >}} [\@RLadiesBuenosAires](https://youtube.com/@RLadiesBuenosAires)\
+{{< fa globe >}} <https://rladiesba.netlify.app/>
+
+## ¡No te pierdas las novedades! {.large-font-slide}
 
 ::: columns
 ::: {.column width="50%"}
-**R Markdown**
+¡El 2025 se viene con todo!
 
-```{r, label=rmarkdown, eval=FALSE}
-#| echo: fenced
-# código
-```
+-   Lanzaremos el club de lectura del libro [Mastering Shiny](https://mastering-shiny.org/) de Hadley Wickham. Sumate para aprender `shiny` entre todes.
+-   Vení a nuestro próximo meetup sobre tableros o dashboards con `Quarto`💜
 :::
 
 ::: {.column width="50%"}
-**Quarto**
-
-```{r}
-#| label: quarto
-#| echo: fenced
-#| eval: false
-
-# código
-```
+![](images/cover-ma.png){fig-align="right" width="419"}
 :::
 :::
 
+# ¡Muchas gracias!

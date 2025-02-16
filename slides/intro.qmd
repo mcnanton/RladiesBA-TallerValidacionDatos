@@ -2,13 +2,9 @@
 
 Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:
 
-[jformoso.github.io/intro-quarto/setup.html](https://jformoso.github.io/quarto-rladiesBA/setup.html).
+[mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html](https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html).
 
 ## Agradecimientos
-
-**Este taller y sus materiales se basaron en:**
-
-\
 
 **Auspician RLadies Buenos Aires:**
 

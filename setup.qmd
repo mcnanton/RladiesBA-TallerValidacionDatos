@@ -23,10 +23,11 @@ Instalá los siguientes paquetes copiando y pegando el siguiente código en la c
 ```{r}
 
 paquetes_lista <- c(
-  "", "", ""
+  "dplyr", "datos", "messy", "pointblank", "data.validator", "assertr", "validate", "janitor"
 )
 install.packages(paquetes_lista)
 
 ```
 #### 3. Ejercicios
 
+Descargá el archivo [Taller-validacion-ejercicios.rar](https://github.com/JFormoso/quarto-rladiesBA/blob/main/Taller-quarto-ejercicios.rar) y descomprimilo en tu computadora. 
