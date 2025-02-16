@@ -15,7 +15,7 @@ lang: es
 
 
 website:
-  title: "quarto-rladiesBA"
+  title: "Validación de datos - RLadies Buenos Aires"
   page-navigation: true
   description: "Página principal del taller ¡NA pasa nada!: aprende a validar datos con R de RLadies Buenos Aires 2024."
   site-url: "https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/"
