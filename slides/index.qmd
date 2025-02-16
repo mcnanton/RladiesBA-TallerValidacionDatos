@@ -19,6 +19,5 @@ df-print: kable
 
 {{< include intro.qmd >}}
 {{< include slide1.qmd >}}
-{{< include slide2.qmd >}}
 {{< include rladies.qmd >}}
 
