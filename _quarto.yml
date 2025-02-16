@@ -10,12 +10,12 @@ project:
     timeout: 3600
 lang: es
 website:
-  title: "DataVal-rladiesBA"
+  title: "RladiesBA-TallerValidacionDatos"
   page-navigation: true
   description: "Página principal del taller ... de RLadies Buenos Aires 2025."
-  site-url: "https://mcnanton.github.io/DataVal-rladiesBA/"
+  site-url: "https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/"
   favicon: "images/logo-rladies-BA.png"
-  repo-url: https://github.com/mcnanton/DataVal-rladiesBA
+  repo-url: https://github.com/mcnanton/RladiesBA-TallerValidacionDatos
   repo-actions: [source, edit, issue]
   page-footer:
     left: "&copy; 2025 María Nanton, Betsabé Cohen"
@@ -30,7 +30,7 @@ website:
     type: dark
     tools:
       - icon: github
-        href: https://github.com/mcnanton/DataVal-rladiesBA
+        href: https://github.com/mcnanton/RladiesBA-TallerValidacionDatos
         text: GitHub
     contents:
      - href: index.qmd
