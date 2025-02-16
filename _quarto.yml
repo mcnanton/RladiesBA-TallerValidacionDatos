@@ -8,19 +8,27 @@ project:
     browser: true
     watch-inputs: true
     timeout: 3600
+
 lang: es
+
+
+
+
 website:
-  title: "RladiesBA-TallerValidacionDatos"
+  title: "quarto-rladiesBA"
   page-navigation: true
-  description: "Página principal del taller ... de RLadies Buenos Aires 2025."
+  description: "Página principal del taller ¡NA pasa nada!: aprende a validar datos con R de RLadies Buenos Aires 2024."
   site-url: "https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/"
   favicon: "images/logo-rladies-BA.png"
+
   repo-url: https://github.com/mcnanton/RladiesBA-TallerValidacionDatos
   repo-actions: [source, edit, issue]
+
   page-footer:
-    left: "&copy; 2025 María Nanton, Betsabé Cohen"
+    left: "&copy; 2025 María Nanton, Betsy Cohen"
     right: "Website construida con [Quarto](https://quarto.org/)."
     background: "#4c074d"
+
   sidebar:
     background: "#4c074d"
     logo: "images/logo-unificado.png"
@@ -41,6 +49,8 @@ website:
        text: Materiales
      - href: license.qmd
        text: Licencia
+
+
 format:
   html:
     theme: [flatly, theme.scss]
@@ -52,6 +62,7 @@ format:
     code-overflow: scroll
     mainfont: Atkinson Hyperlegible
     highlight-style: a11y
+
 # lightbox extension
 # https://github.com/quarto-ext/lightbox
 lightbox:
@@ -59,6 +70,3 @@ lightbox:
   # match: auto # give all images lightbox treatment
   effect: zoom # how lightbox opens/closes
   loop: false # doesn't loop to first image in gallery
-0 commit comments
-Comments
-0
