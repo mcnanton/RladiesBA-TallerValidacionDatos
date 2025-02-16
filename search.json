@@ -1,87 +1,228 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Titulo del taller",
+    "objectID": "slides/slide1.html",
+    "href": "slides/slide1.html",
+    "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub"
+    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)\n\n\n\n\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|\n\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n\n\n\n\n\n\n\n\n\n\nMateriales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
   },
   {
-    "objectID": "index.html#fecha-y-ubicación",
-    "href": "index.html#fecha-y-ubicación",
-    "title": "Titulo del taller",
+    "objectID": "slides/slide1.html#herramienta-1-validate",
+    "href": "slides/slide1.html#herramienta-1-validate",
+    "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub"
+    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
   },
   {
-    "objectID": "index.html#sobre-este-taller",
-    "href": "index.html#sobre-este-taller",
-    "title": "Titulo del taller",
-    "section": "Sobre este taller",
-    "text": "Sobre este taller\nEl taller ¡NA pasa nada!: aprende a validar datos con R nos presentará 4 bibliotecas con funciones específicas para validar calidad de datos: validate, assertr, data.validator y pointblank. Aprenderemos como usar estas herramientas para evaluar la calidad de un dataset de manera rápida, automática y descriptiva en cuanto a su integridad, completitud, consistencia y exactitud."
+    "objectID": "slides/slide1.html#herramienta-2-assertr",
+    "href": "slides/slide1.html#herramienta-2-assertr",
+    "title": "Introducción a la validación de datos",
+    "section": "",
+    "text": "Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
   },
   {
-    "objectID": "index.html#objetivos-de-aprendizaje",
-    "href": "index.html#objetivos-de-aprendizaje",
-    "title": "Titulo del taller",
-    "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\nConocer un framework de evaluación de calidad de datos inmediatamente aplicable mediante el uso de R\nFamiliarizarse con las bibliotecas validate, assertr, data.validator y pointblank\nAprender sobre las funciones predicado y cómo utilizarlas para la evaluación univariada, multivariada y a nivel dataset\nEntender las salidas de información de las 4 bibliotecas y qué tipo de reporte puede generarse con cada una"
+    "objectID": "slides/slide1.html#herramienta-3-data.validator",
+    "href": "slides/slide1.html#herramienta-3-data.validator",
+    "title": "Introducción a la validación de datos",
+    "section": "",
+    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
   },
   {
-    "objectID": "index.html#instructoras",
-    "href": "index.html#instructoras",
-    "title": "Titulo del taller",
-    "section": "Instructoras",
-    "text": "Instructoras\n\nMaría Nanton es Data Scientist, maestranda en Data Mining y coordinadora del equipo de Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas en Salud de la Ciudad de Buenos Aires. Además, es organizadora de RLadies Buenos Aires 💜 y es colaboradora en MetaDocencia 🍎.\nBetsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda en estadística de la Universidad Nacional de Tres de Febrero. Además, es organizadora de RLadies Buenos Aires 💜 y del Núcleo de Innovación Social."
+    "objectID": "slides/slide1.html#herramienta-4-pointblank",
+    "href": "slides/slide1.html#herramienta-4-pointblank",
+    "title": "Introducción a la validación de datos",
+    "section": "",
+    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia"
   },
   {
-    "objectID": "index.html#código-de-conducta",
-    "href": "index.html#código-de-conducta",
-    "title": "Titulo del taller",
-    "section": "Código de Conducta",
-    "text": "Código de Conducta\nR-Ladies se dedica a proporcionar una experiencia libre de acoso para todes. Conocé el Código de Conducta que se aplica en todos los espacios de participación de R-Ladies Global y del capitulo, incluyendo reuniones presenciales o virtuales, Twitter, Slack, listas de correo, tanto online como offline."
+    "objectID": "slides/slide1.html#en-qué-difieren-estas-bibliotecas",
+    "href": "slides/slide1.html#en-qué-difieren-estas-bibliotecas",
+    "title": "Introducción a la validación de datos",
+    "section": "",
+    "text": "Materiales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
   },
   {
-    "objectID": "index.html#agradecimientos",
-    "href": "index.html#agradecimientos",
-    "title": "Titulo del taller",
+    "objectID": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "href": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "title": "Introducción a la validación de datos",
+    "section": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”",
+    "text": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
+  },
+  {
+    "objectID": "slides/slide1.html#a-validar",
+    "href": "slides/slide1.html#a-validar",
+    "title": "Introducción a la validación de datos",
+    "section": "A validar!",
+    "text": "A validar!"
+  },
+  {
+    "objectID": "slides/slide1.html#para-leer-más",
+    "href": "slides/slide1.html#para-leer-más",
+    "title": "Introducción a la validación de datos",
+    "section": "Para leer más",
+    "text": "Para leer más\n\nassertr https://docs.ropensci.org/assertr/\nvalidate https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html\ndata.validator https://appsilon.github.io/data.validator/index.html\npointblank https://rstudio.github.io/pointblank/index.html"
+  },
+  {
+    "objectID": "slides/intro.html",
+    "href": "slides/intro.html",
+    "title": "quarto-rladiesBA",
+    "section": "",
+    "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
+  },
+  {
+    "objectID": "slides/intro.html#mientras-esperás-a-que-comencemos",
+    "href": "slides/intro.html#mientras-esperás-a-que-comencemos",
+    "title": "quarto-rladiesBA",
+    "section": "",
+    "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
+  },
+  {
+    "objectID": "slides/intro.html#agradecimientos",
+    "href": "slides/intro.html#agradecimientos",
+    "title": "quarto-rladiesBA",
     "section": "Agradecimientos",
-    "text": "Agradecimientos\nEste taller fue auspiciado por:"
+    "text": "Agradecimientos\nAuspician RLadies Buenos Aires:"
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "Licencia",
+    "objectID": "slides/intro.html#codigo-de-conducta",
+    "href": "slides/intro.html#codigo-de-conducta",
+    "title": "quarto-rladiesBA",
+    "section": "Codigo de conducta",
+    "text": "Codigo de conducta\nTodos los espacios de participación de R-Ladies Global y RLadies Buenos Aires, incluyendo reuniones presenciales o virtuales, Twitter, Slack y listas de correo se rigen por el Código de conducta de RLadies."
+  },
+  {
+    "objectID": "slides/intro.html#licencia",
+    "href": "slides/intro.html#licencia",
+    "title": "quarto-rladiesBA",
+    "section": "Licencia",
+    "text": "Licencia\nEstos materiales están publicados bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA), la cual implica:\n\nAtribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.\nUso no comercial: No está permitido usar el material con fines comerciales.\nCompartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia."
+  },
+  {
+    "objectID": "slides/intro.html#section",
+    "href": "slides/intro.html#section",
+    "title": "quarto-rladiesBA",
     "section": "",
-    "text": "© 2024 Autora\nEstos materiales están publicados bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA), la cual implica:\n\nAtribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.\nUso no comercial: No está permitido usar el material con fines comerciales.\nCompartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia."
-  },
-  {
-    "objectID": "materiales.html",
-    "href": "materiales.html",
-    "title": "Materiales",
-    "section": "",
-    "text": "Accedé a las diapositivas en pantalla completa."
-  },
-  {
-    "objectID": "materiales.html#diapositivas-de-la-presentación",
-    "href": "materiales.html#diapositivas-de-la-presentación",
-    "title": "Materiales",
-    "section": "",
-    "text": "Accedé a las diapositivas en pantalla completa."
-  },
-  {
-    "objectID": "materiales.html#video",
-    "href": "materiales.html#video",
-    "title": "Materiales",
-    "section": "Video",
-    "text": "Video\nPodés acceder a la grabación del taller 👉🏼aquí👈🏼\n\\\nVisitá nuestro canal de youtube para encontrar más videos como este."
+    "text": "Betsabé Cohen\n\n\nMónica Alonso\n\n\nKarina Bartolomé\n\nVirginia García Alonso\n\n\nJimena Saucedo\n\nPriscilla Minotti\n\n\nMaría Nanton\n\nJesica Formoso"
   },
   {
     "objectID": "setup.html",
     "href": "setup.html",
     "title": "Instrucciones de configuración",
     "section": "",
-    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo Taller-validacion-ejercicios.rar y descomprimilo en tu computadora."
+    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo Taller-validacion-ejercicios.rar y descomprimilo en tu computadora.",
+    "crumbs": [
+      "Instrucciones de configuración"
+    ]
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "© 2025 María Nanton, Betsy Cohen\nEstos materiales están publicados bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA), la cual implica:\n\nAtribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.\nUso no comercial: No está permitido usar el material con fines comerciales.\nCompartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia.",
+    "crumbs": [
+      "Licencia"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Titulo del taller",
+    "section": "",
+    "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#fecha-y-ubicación",
+    "href": "index.html#fecha-y-ubicación",
+    "title": "Titulo del taller",
+    "section": "",
+    "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#sobre-este-taller",
+    "href": "index.html#sobre-este-taller",
+    "title": "Titulo del taller",
+    "section": "Sobre este taller",
+    "text": "Sobre este taller\nEl taller ¡NA pasa nada!: aprende a validar datos con R nos presentará 4 bibliotecas con funciones específicas para validar calidad de datos: validate, assertr, data.validator y pointblank. Aprenderemos como usar estas herramientas para evaluar la calidad de un dataset de manera rápida, automática y descriptiva en cuanto a su integridad, completitud, consistencia y exactitud.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#objetivos-de-aprendizaje",
+    "href": "index.html#objetivos-de-aprendizaje",
+    "title": "Titulo del taller",
+    "section": "Objetivos de aprendizaje",
+    "text": "Objetivos de aprendizaje\n\nConocer un framework de evaluación de calidad de datos inmediatamente aplicable mediante el uso de R\nFamiliarizarse con las bibliotecas validate, assertr, data.validator y pointblank\nAprender sobre las funciones predicado y cómo utilizarlas para la evaluación univariada, multivariada y a nivel dataset\nEntender las salidas de información de las 4 bibliotecas y qué tipo de reporte puede generarse con cada una",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#instructoras",
+    "href": "index.html#instructoras",
+    "title": "Titulo del taller",
+    "section": "Instructoras",
+    "text": "Instructoras\n\nMaría Nanton es Data Scientist, maestranda en Data Mining y coordinadora del equipo de Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas en Salud de la Ciudad de Buenos Aires. Además, es organizadora de RLadies Buenos Aires 💜 y es colaboradora en MetaDocencia 🍎.\n Betsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda en estadística de la Universidad Nacional de Tres de Febrero. Además, es organizadora de RLadies Buenos Aires 💜 y del Núcleo de Innovación Social.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#código-de-conducta",
+    "href": "index.html#código-de-conducta",
+    "title": "Titulo del taller",
+    "section": "Código de Conducta",
+    "text": "Código de Conducta\nR-Ladies se dedica a proporcionar una experiencia libre de acoso para todes. Conocé el Código de Conducta que se aplica en todos los espacios de participación de R-Ladies Global y del capitulo, incluyendo reuniones presenciales o virtuales, Twitter, Slack, listas de correo, tanto online como offline.",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "index.html#agradecimientos",
+    "href": "index.html#agradecimientos",
+    "title": "Titulo del taller",
+    "section": "Agradecimientos",
+    "text": "Agradecimientos\nEste taller fue auspiciado por:",
+    "crumbs": [
+      "Inicio"
+    ]
+  },
+  {
+    "objectID": "materiales.html",
+    "href": "materiales.html",
+    "title": "Materiales",
+    "section": "",
+    "text": "Accedé a las diapositivas en pantalla completa.",
+    "crumbs": [
+      "Materiales"
+    ]
+  },
+  {
+    "objectID": "materiales.html#diapositivas-de-la-presentación",
+    "href": "materiales.html#diapositivas-de-la-presentación",
+    "title": "Materiales",
+    "section": "",
+    "text": "Accedé a las diapositivas en pantalla completa.",
+    "crumbs": [
+      "Materiales"
+    ]
+  },
+  {
+    "objectID": "materiales.html#video",
+    "href": "materiales.html#video",
+    "title": "Materiales",
+    "section": "Video",
+    "text": "Video\nPodés acceder a la grabación del taller 👉🏼aquí👈🏼\n\\\nVisitá nuestro canal de youtube para encontrar más videos como este.",
+    "crumbs": [
+      "Materiales"
+    ]
   },
   {
     "objectID": "slides/index.html#mientras-esperás-a-que-comencemos",
@@ -203,48 +344,6 @@
     "text": "¡No te pierdas las novedades!\n\n\n¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\nVení a nuestro próximo meetup sobre tableros o dashboards con Quarto💜"
   },
   {
-    "objectID": "slides/intro.html",
-    "href": "slides/intro.html",
-    "title": "quarto-rladiesBA",
-    "section": "",
-    "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
-  },
-  {
-    "objectID": "slides/intro.html#mientras-esperás-a-que-comencemos",
-    "href": "slides/intro.html#mientras-esperás-a-que-comencemos",
-    "title": "quarto-rladiesBA",
-    "section": "",
-    "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
-  },
-  {
-    "objectID": "slides/intro.html#agradecimientos",
-    "href": "slides/intro.html#agradecimientos",
-    "title": "quarto-rladiesBA",
-    "section": "Agradecimientos",
-    "text": "Agradecimientos\nAuspician RLadies Buenos Aires:"
-  },
-  {
-    "objectID": "slides/intro.html#codigo-de-conducta",
-    "href": "slides/intro.html#codigo-de-conducta",
-    "title": "quarto-rladiesBA",
-    "section": "Codigo de conducta",
-    "text": "Codigo de conducta\nTodos los espacios de participación de R-Ladies Global y RLadies Buenos Aires, incluyendo reuniones presenciales o virtuales, Twitter, Slack y listas de correo se rigen por el Código de conducta de RLadies."
-  },
-  {
-    "objectID": "slides/intro.html#licencia",
-    "href": "slides/intro.html#licencia",
-    "title": "quarto-rladiesBA",
-    "section": "Licencia",
-    "text": "Licencia\nEstos materiales están publicados bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA), la cual implica:\n\nAtribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.\nUso no comercial: No está permitido usar el material con fines comerciales.\nCompartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia."
-  },
-  {
-    "objectID": "slides/intro.html#section",
-    "href": "slides/intro.html#section",
-    "title": "quarto-rladiesBA",
-    "section": "",
-    "text": "Betsabé Cohen\n\n\nMónica Alonso\n\n\nKarina Bartolomé\n\nVirginia García Alonso\n\n\nJimena Saucedo\n\nPriscilla Minotti\n\n\nMaría Nanton\n\nJesica Formoso"
-  },
-  {
     "objectID": "slides/rladies.html",
     "href": "slides/rladies.html",
     "title": "Antes de que te vayas..",
@@ -264,68 +363,5 @@
     "title": "Antes de que te vayas..",
     "section": "",
     "text": "¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\nVení a nuestro próximo meetup sobre tableros o dashboards con Quarto💜"
-  },
-  {
-    "objectID": "slides/slide1.html",
-    "href": "slides/slide1.html",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)\n\n\n\n\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|\n\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n\n\n\n\n\n\n\n\n\n\nMateriales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
-  },
-  {
-    "objectID": "slides/slide1.html#herramienta-1-validate",
-    "href": "slides/slide1.html#herramienta-1-validate",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
-  },
-  {
-    "objectID": "slides/slide1.html#herramienta-2-assertr",
-    "href": "slides/slide1.html#herramienta-2-assertr",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
-  },
-  {
-    "objectID": "slides/slide1.html#herramienta-3-data.validator",
-    "href": "slides/slide1.html#herramienta-3-data.validator",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
-  },
-  {
-    "objectID": "slides/slide1.html#herramienta-4-pointblank",
-    "href": "slides/slide1.html#herramienta-4-pointblank",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia"
-  },
-  {
-    "objectID": "slides/slide1.html#en-qué-difieren-estas-bibliotecas",
-    "href": "slides/slide1.html#en-qué-difieren-estas-bibliotecas",
-    "title": "Introducción a la validación de datos",
-    "section": "",
-    "text": "Materiales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
-  },
-  {
-    "objectID": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
-    "href": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
-    "title": "Introducción a la validación de datos",
-    "section": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”",
-    "text": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
-  },
-  {
-    "objectID": "slides/slide1.html#a-validar",
-    "href": "slides/slide1.html#a-validar",
-    "title": "Introducción a la validación de datos",
-    "section": "A validar!",
-    "text": "A validar!"
-  },
-  {
-    "objectID": "slides/slide1.html#para-leer-más",
-    "href": "slides/slide1.html#para-leer-más",
-    "title": "Introducción a la validación de datos",
-    "section": "Para leer más",
-    "text": "Para leer más\n\nassertr https://docs.ropensci.org/assertr/\nvalidate https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html\ndata.validator https://appsilon.github.io/data.validator/index.html\npointblank https://rstudio.github.io/pointblank/index.html"
   }
 ]
