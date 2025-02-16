@@ -45,7 +45,8 @@ cuanto a su integridad, completitud, consistencia y exactitud.
 
 ## Instructoras
 
-![](images/maria_cristina_nanton.jpeg){style="float:left;padding: 0 10px 0 0; border-radius:50%"}
+![](images/maria_cristina_nanton.jpeg){style="float:left;padding: 0 10px 0 0; border-radius:50%"
+width="149"}
 
 [María Nanton](https://rladiesba.netlify.app/author/maria-nanton/) es
 Data Scientist, maestranda en Data Mining y coordinadora del equipo de
@@ -54,6 +55,8 @@ en Salud de la Ciudad de Buenos Aires. Además, es organizadora de
 [RLadies Buenos Aires](https://rladiesba.netlify.app/) 💜 y es
 colaboradora en [MetaDocencia](https://www.metadocencia.org/) 🍎.
 
+![](images/betsy2.png){style="float:left;padding: 0 10px 0 0; border-radius:50%"
+width="149"}
 Betsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda
 en estadística de la Universidad Nacional de Tres de Febrero. Además, es
 organizadora de [RLadies Buenos Aires](https://rladiesba.netlify.app/)

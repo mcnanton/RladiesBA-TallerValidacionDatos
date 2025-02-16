@@ -3,7 +3,7 @@ title: "Licencia"
 format: html
 ---
 
-© 2024 Autora
+© 2025 María Nanton, Betsy Cohen
 
 Estos materiales están publicados bajo la licencia [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/), la cual implica:
 
