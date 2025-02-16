@@ -65,42 +65,42 @@
   {
     "objectID": "slides/intro.html",
     "href": "slides/intro.html",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "",
     "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
   },
   {
     "objectID": "slides/intro.html#mientras-esperás-a-que-comencemos",
     "href": "slides/intro.html#mientras-esperás-a-que-comencemos",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "",
     "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
   },
   {
     "objectID": "slides/intro.html#agradecimientos",
     "href": "slides/intro.html#agradecimientos",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "Agradecimientos",
     "text": "Agradecimientos\nAuspician RLadies Buenos Aires:"
   },
   {
     "objectID": "slides/intro.html#codigo-de-conducta",
     "href": "slides/intro.html#codigo-de-conducta",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "Codigo de conducta",
     "text": "Codigo de conducta\nTodos los espacios de participación de R-Ladies Global y RLadies Buenos Aires, incluyendo reuniones presenciales o virtuales, Twitter, Slack y listas de correo se rigen por el Código de conducta de RLadies."
   },
   {
     "objectID": "slides/intro.html#licencia",
     "href": "slides/intro.html#licencia",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "Licencia",
     "text": "Licencia\nEstos materiales están publicados bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA), la cual implica:\n\nAtribución: Podés compartir y adaptar el material siempre que reconozcas la autoría de forma adecuada.\nUso no comercial: No está permitido usar el material con fines comerciales.\nCompartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia."
   },
   {
     "objectID": "slides/intro.html#section",
     "href": "slides/intro.html#section",
-    "title": "quarto-rladiesBA",
+    "title": "Validación de datos - RLadies Buenos Aires",
     "section": "",
     "text": "Betsabé Cohen\n\n\nMónica Alonso\n\n\nKarina Bartolomé\n\nVirginia García Alonso\n\n\nJimena Saucedo\n\nPriscilla Minotti\n\n\nMaría Nanton\n\nJesica Formoso"
   },
@@ -169,7 +169,7 @@
     "href": "index.html#instructoras",
     "title": "Titulo del taller",
     "section": "Instructoras",
-    "text": "Instructoras\n\nMaría Nanton es Data Scientist, maestranda en Data Mining y coordinadora del equipo de Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas en Salud de la Ciudad de Buenos Aires. Además, es organizadora de RLadies Buenos Aires 💜 y es colaboradora en MetaDocencia 🍎.\n Betsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda en estadística de la Universidad Nacional de Tres de Febrero. Además, es organizadora de RLadies Buenos Aires 💜 y del Núcleo de Innovación Social.",
+    "text": "Instructoras\n\nMaría Nanton es Data Scientist, maestranda en Data Mining y coordinadora del equipo de Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas en Salud de la Ciudad de Buenos Aires. Además, es organizadora de RLadies Buenos Aires 💜 y es colaboradora en MetaDocencia 🍎.\n\n\nBetsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda en estadística de la Universidad Nacional de Tres de Febrero. Además, es organizadora de RLadies Buenos Aires 💜 y del Núcleo de Innovación Social.",
     "crumbs": [
       "Inicio"
     ]
