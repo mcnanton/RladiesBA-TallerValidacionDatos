@@ -4,7 +4,9 @@ Asegurate de haber seguido las instrucciones de configuración y que tenés los 
 
 [mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html](https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html).
 
-## Agradecimientos
+## Reconocimientos
+
+La presentación "[Data Validation in R - From Principles to Tools and Packages](https://nyhackr.blob.core.windows.net/presentations/Data_Validation-Caterina_Constantinescu.pdf)" de Dra. Catarina Constantinescu sirvió de inspiración para los contenidos de este taller. También agradecemos a las personas que, en el marco del desarrollo paquetes de validación de datos, redactaron guías, libros y tutoriales que publicaron de manera abierta.
 
 **Auspician RLadies Buenos Aires:**
 
@@ -79,7 +81,7 @@ Priscilla Minotti
 :::
 
 ::: {.column width="20%"}
-![](images/maria.jpg){style="border-radius:1em;margin-top:auto"}
+![](images/maria.jpeg){style="border-radius:1em;margin-top:auto"}
 
 María Nanton
 

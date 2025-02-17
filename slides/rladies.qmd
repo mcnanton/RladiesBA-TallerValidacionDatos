@@ -22,5 +22,3 @@
 ![](images/cover-ma.png){fig-align="right" width="419"}
 :::
 :::
-
-# ¡Muchas gracias!

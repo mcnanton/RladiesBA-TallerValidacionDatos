@@ -1,10 +1,8 @@
 # Introducción a la validación de datos {.section}
 
-## Herramienta 1: validate
+## validate
 
-::: incremental
--   MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)
--   Apariencia
+MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)
 
 ``` r
 ##   name items passes fails nNA error warning        expression
@@ -12,16 +10,18 @@
 ## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)
 ## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)
 ```
+
+## assertr
+
+::: columns
+::: {.column width="35%"}
+![](images/hex_assertr.png){fig-align="center"}
 :::
 
-## Herramienta 2: assertr
-
-::: incremental
-![](images/hex_assertr.png)
-
--   Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.
-
--   Apariencia
+::: {.column width="65%"}
+Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 <https://docs.ropensci.org/assertr/> (website) <https://github.com/ropensci/assertr>
+:::
+:::
 
 ``` r
 ## verification [mpg >= 0] failed! (1 failure)
@@ -29,52 +29,54 @@
 ##     verb redux_fn predicate column index value
 ## 1 verify       NA  mpg >= 0     NA     5    NA
 ```
+
+## data.validator
+
+::: columns
+::: {.column width="35%"}
+![](images/hex_datavalidator.png){fig-align="center" width="240"}
 :::
 
-## Herramienta 3: data.validator
-
-::: incremental
-![](images/hex_datavalidator.png)
-
--   Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.
-
--   Apariencia
+::: {.column width="65%"}
+Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, <https://github.com/Appsilon/data.validator>, <https://appsilon.github.io/data.validator/>.
+:::
+:::
 
 ``` r
 #> Validation summary: 
 #>  Number of successful validations: 1
 #>  Number of validations with warnings: 1
-#>  Number of failed validations: 4
-#> 
-#> Advanced view: 
-#> 
-#> 
+#>  Number of failed validations: 1
 #> |table_name |description                                       |type    | total_violations|
 #> |:----------|:-------------------------------------------------|:-------|----------------:|
 #> |mtcars     |Column drat has only positive values              |success |               NA|
-#> |mtcars     |Column drat has only values larger than 3         |error   |                4|
-#> |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|
-#> |mtcars     |For wt and qsec we have: abs(col) < 2 * sd(col)   |error   |                4|
 #> |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|
 #> |mtcars     |vs and am values should equal 3 or 4              |warning |               24|
 ```
 
-![](images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp)
+## data.validator
+
+![](images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp){fig-align="center" width="460"}
+
+## pointblank
+
+::: columns
+::: {.column width="35%"}
+![](images/hex_pointblank.svg){fig-align="center" width="240"}
 :::
 
-## Herramienta 4: pointblank
-
-::: incremental
-![](images/hex_pointblank.svg)
-
--   Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.
-
--   Apariencia
-
-    ![](images/agent_report.png)
+::: {.column width="65%"}
+Iannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, <https://github.com/rstudio/pointblank>, <https://rstudio.github.io/pointblank/>.
 :::
+:::
+
+## pointblank
+
+![](images/agent_report.png){fig-align="center" width="240"}
 
 ## ¿Conocen alguna de ellas?
+
+![](images/analystdog.jpeg){fig-align="center"}
 
 ## ¿En qué difieren estas bibliotecas?
 
@@ -87,11 +89,19 @@
 
 ## ¿Por qué creen que tiene sentido usar una biblioteca de este tipo?
 
+## ¿Por qué creen que tiene sentido usar una biblioteca de este tipo?
+
+![](images/bearing.jpeg){fig-align="center" width="600"}
+
+## ¿Por qué creen que tiene sentido usar una biblioteca de este tipo?
+
+![](images/document.jpeg){fig-align="center" width="600"}
+
 # Un framework para la evaluación de la calidad de los datos {.section}
 
-## "Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R"
+## "A data quality framework for observational health research data collections with software implementations in R"
 
-Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. "Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R". BMC Med. Res. Methodol. 2021, 21, 63. \[[CrossRef](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7)\]
+Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. \[[CrossRef](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7)\]
 
 ::: incremental
 -   **Integridad**: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?
@@ -102,16 +112,24 @@ Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damero
 
 ## 
 
-![](images/dominios_paquetes.png)
+![](images/dominios_paquetes.png){fig-align="center"}
 
 ## A validar!
 
 ## Para leer más
 
--   assertr <https://docs.ropensci.org/assertr/>
+::: columns 
+::: {.column width="40%"} 
+![](images/testing.jpeg){fig-align="center"}
+:::
 
--   validate <https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html>
+::: {.column width="60%"}
+-   [assertr](https://docs.ropensci.org/assertr/)
 
--   data.validator <https://appsilon.github.io/data.validator/index.html>
+-   [Data Validation Cookbook](https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html) con **validate**
 
--   pointblank <https://rstudio.github.io/pointblank/index.html>
+-   [data.validator](https://appsilon.github.io/data.validator/index.html)
+
+-   [pointblank](https://rstudio.github.io/pointblank/index.html)
+:::
+::: 
