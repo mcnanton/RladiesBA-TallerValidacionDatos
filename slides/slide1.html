@@ -178,17 +178,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introducción-a-la-validación-de-datos" id="toc-introducción-a-la-validación-de-datos" class="nav-link active" data-scroll-target="#introducción-a-la-validación-de-datos">Introducción a la validación de datos</a>
   <ul class="collapse">
-  <li><a href="#herramienta-1-validate" id="toc-herramienta-1-validate" class="nav-link" data-scroll-target="#herramienta-1-validate">Herramienta 1: validate</a></li>
-  <li><a href="#herramienta-2-assertr" id="toc-herramienta-2-assertr" class="nav-link" data-scroll-target="#herramienta-2-assertr">Herramienta 2: assertr</a></li>
-  <li><a href="#herramienta-3-data.validator" id="toc-herramienta-3-data.validator" class="nav-link" data-scroll-target="#herramienta-3-data.validator">Herramienta 3: data.validator</a></li>
-  <li><a href="#herramienta-4-pointblank" id="toc-herramienta-4-pointblank" class="nav-link" data-scroll-target="#herramienta-4-pointblank">Herramienta 4: pointblank</a></li>
+  <li><a href="#validate" id="toc-validate" class="nav-link" data-scroll-target="#validate">validate</a></li>
+  <li><a href="#assertr" id="toc-assertr" class="nav-link" data-scroll-target="#assertr">assertr</a></li>
+  <li><a href="#data.validator" id="toc-data.validator" class="nav-link" data-scroll-target="#data.validator">data.validator</a></li>
+  <li><a href="#data.validator-1" id="toc-data.validator-1" class="nav-link" data-scroll-target="#data.validator-1">data.validator</a></li>
+  <li><a href="#pointblank" id="toc-pointblank" class="nav-link" data-scroll-target="#pointblank">pointblank</a></li>
+  <li><a href="#pointblank-1" id="toc-pointblank-1" class="nav-link" data-scroll-target="#pointblank-1">pointblank</a></li>
   <li><a href="#conocen-alguna-de-ellas" id="toc-conocen-alguna-de-ellas" class="nav-link" data-scroll-target="#conocen-alguna-de-ellas">¿Conocen alguna de ellas?</a></li>
   <li><a href="#en-qué-difieren-estas-bibliotecas" id="toc-en-qué-difieren-estas-bibliotecas" class="nav-link" data-scroll-target="#en-qué-difieren-estas-bibliotecas">¿En qué difieren estas bibliotecas?</a></li>
   <li><a href="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo" id="toc-por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo" class="nav-link" data-scroll-target="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</a></li>
+  <li><a href="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1" id="toc-por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1" class="nav-link" data-scroll-target="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</a></li>
+  <li><a href="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2" id="toc-por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2" class="nav-link" data-scroll-target="#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</a></li>
   </ul></li>
   <li><a href="#un-framework-para-la-evaluación-de-la-calidad-de-los-datos" id="toc-un-framework-para-la-evaluación-de-la-calidad-de-los-datos" class="nav-link" data-scroll-target="#un-framework-para-la-evaluación-de-la-calidad-de-los-datos">Un framework para la evaluación de la calidad de los datos</a>
   <ul class="collapse">
-  <li><a href="#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" id="toc-facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="nav-link" data-scroll-target="#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r">“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”</a></li>
+  <li><a href="#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" id="toc-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="nav-link" data-scroll-target="#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r">“A data quality framework for observational health research data collections with software implementations in R”</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   <li><a href="#a-validar" id="toc-a-validar" class="nav-link" data-scroll-target="#a-validar">A validar!</a></li>
   <li><a href="#para-leer-más" id="toc-para-leer-más" class="nav-link" data-scroll-target="#para-leer-más">Para leer más</a></li>
@@ -204,73 +208,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introducción-a-la-validación-de-datos" class="level1 section">
 <h1 class="section">Introducción a la validación de datos</h1>
-<section id="herramienta-1-validate" class="level2">
-<h2 class="anchored" data-anchor-id="herramienta-1-validate">Herramienta 1: validate</h2>
-<div class="incremental">
-<ul class="incremental">
-<li>MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)</li>
-<li>Apariencia</li>
-</ul>
+<section id="validate" class="level2">
+<h2 class="anchored" data-anchor-id="validate">validate</h2>
+<p>MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">##   name items passes fails nNA error warning        expression</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="herramienta-2-assertr" class="level2">
-<h2 class="anchored" data-anchor-id="herramienta-2-assertr">Herramienta 2: assertr</h2>
-<div class="incremental">
-<p><img src="images/hex_assertr.png" class="img-fluid"></p>
-<ul class="incremental">
-<li><p>Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.</p></li>
-<li><p>Apariencia</p></li>
-</ul>
+<section id="assertr" class="level2">
+<h2 class="anchored" data-anchor-id="assertr">assertr</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hex_assertr.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<p>Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 <a href="https://docs.ropensci.org/assertr/" class="uri">https://docs.ropensci.org/assertr/</a> (website) <a href="https://github.com/ropensci/assertr" class="uri">https://github.com/ropensci/assertr</a></p>
+</div>
+</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## verification [mpg &gt;= 0] failed! (1 failure)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">##     verb redux_fn predicate column index value</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 verify       NA  mpg &gt;= 0     NA     5    NA</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="herramienta-3-data.validator" class="level2">
-<h2 class="anchored" data-anchor-id="herramienta-3-data.validator">Herramienta 3: data.validator</h2>
-<div class="incremental">
-<p><img src="images/hex_datavalidator.png" class="img-fluid"></p>
-<ul class="incremental">
-<li><p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.</p></li>
-<li><p>Apariencia</p></li>
-</ul>
+<section id="data.validator" class="level2">
+<h2 class="anchored" data-anchor-id="data.validator">data.validator</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hex_datavalidator.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="240"></p>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, <a href="https://github.com/Appsilon/data.validator" class="uri">https://github.com/Appsilon/data.validator</a>, <a href="https://appsilon.github.io/data.validator/" class="uri">https://appsilon.github.io/data.validator/</a>.</p>
+</div>
+</div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Validation summary: </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Number of successful validations: 1</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Number of validations with warnings: 1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Number of failed validations: 4</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Advanced view: </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |table_name |description                                       |type    | total_violations|</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |Column drat has only positive values              |success |               NA|</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp" class="img-fluid"></p>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Number of failed validations: 1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |table_name |description                                       |type    | total_violations|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |Column drat has only positive values              |success |               NA|</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data.validator-1" class="level2">
+<h2 class="anchored" data-anchor-id="data.validator-1">data.validator</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="460"></p>
+</figure>
 </div>
 </section>
-<section id="herramienta-4-pointblank" class="level2">
-<h2 class="anchored" data-anchor-id="herramienta-4-pointblank">Herramienta 4: pointblank</h2>
-<div class="incremental">
-<p><img src="images/hex_pointblank.svg" class="img-fluid"></p>
-<ul class="incremental">
-<li><p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.</p></li>
-<li><p>Apariencia</p>
-<p><img src="images/agent_report.png" class="img-fluid"></p></li>
-</ul>
+<section id="pointblank" class="level2">
+<h2 class="anchored" data-anchor-id="pointblank">pointblank</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hex_pointblank.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="240"></p>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<p>Iannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, <a href="https://github.com/rstudio/pointblank" class="uri">https://github.com/rstudio/pointblank</a>, <a href="https://rstudio.github.io/pointblank/" class="uri">https://rstudio.github.io/pointblank/</a>.</p>
+</div>
+</div>
+</section>
+<section id="pointblank-1" class="level2">
+<h2 class="anchored" data-anchor-id="pointblank-1">pointblank</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/agent_report.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="240"></p>
+</figure>
 </div>
 </section>
 <section id="conocen-alguna-de-ellas" class="level2">
 <h2 class="anchored" data-anchor-id="conocen-alguna-de-ellas">¿Conocen alguna de ellas?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/analystdog.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="en-qué-difieren-estas-bibliotecas" class="level2">
 <h2 class="anchored" data-anchor-id="en-qué-difieren-estas-bibliotecas">¿En qué difieren estas bibliotecas?</h2>
@@ -286,12 +309,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo" class="level2">
 <h2 class="anchored" data-anchor-id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
 </section>
+<section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/bearing.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+</section>
+<section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2">¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/document.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600"></p>
+</figure>
+</div>
+</section>
 </section>
 <section id="un-framework-para-la-evaluación-de-la-calidad-de-los-datos" class="level1 section">
 <h1 class="section">Un framework para la evaluación de la calidad de los datos</h1>
-<section id="facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r">“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”</h2>
-<p>Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [<a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7">CrossRef</a>]</p>
+<section id="a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r">“A data quality framework for observational health research data collections with software implementations in R”</h2>
+<p>Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [<a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7">CrossRef</a>]</p>
 <div class="incremental">
 <ul class="incremental">
 <li><strong>Integridad</strong>: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?</li>
@@ -303,19 +342,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
-<p><img src="images/dominios_paquetes.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dominios_paquetes.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="a-validar" class="level2">
 <h2 class="anchored" data-anchor-id="a-validar">A validar!</h2>
 </section>
 <section id="para-leer-más" class="level2">
 <h2 class="anchored" data-anchor-id="para-leer-más">Para leer más</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/testing.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
 <ul>
-<li><p>assertr <a href="https://docs.ropensci.org/assertr/" class="uri">https://docs.ropensci.org/assertr/</a></p></li>
-<li><p>validate <a href="https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html" class="uri">https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html</a></p></li>
-<li><p>data.validator <a href="https://appsilon.github.io/data.validator/index.html" class="uri">https://appsilon.github.io/data.validator/index.html</a></p></li>
-<li><p>pointblank <a href="https://rstudio.github.io/pointblank/index.html" class="uri">https://rstudio.github.io/pointblank/index.html</a></p></li>
+<li><p><a href="https://docs.ropensci.org/assertr/">assertr</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html">Data Validation Cookbook</a> con <strong>validate</strong></p></li>
+<li><p><a href="https://appsilon.github.io/data.validator/index.html">data.validator</a></p></li>
+<li><p><a href="https://rstudio.github.io/pointblank/index.html">pointblank</a></p></li>
 </ul>
+</div>
+</div>
 
 
 </section>

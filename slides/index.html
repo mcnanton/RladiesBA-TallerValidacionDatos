@@ -211,8 +211,9 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 <p>Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:</p>
 <p><a href="https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html">mcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html</a>.</p>
 </section>
-<section id="agradecimientos" class="slide level2">
-<h2>Agradecimientos</h2>
+<section id="reconocimientos" class="slide level2">
+<h2>Reconocimientos</h2>
+<p>La presentación “<a href="https://nyhackr.blob.core.windows.net/presentations/Data_Validation-Caterina_Constantinescu.pdf">Data Validation in R - From Principles to Tools and Packages</a>” de Dra. Catarina Constantinescu sirvió de inspiración para los contenidos de este taller. También agradecemos a las personas que, en el marco del desarrollo paquetes de validación de datos, redactaron guías, libros y tutoriales que publicaron de manera abierta.</p>
 <p><strong>Auspician RLadies Buenos Aires:</strong></p>
 <div class="columns">
 <div class="column" style="width:10%;">
@@ -263,7 +264,7 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 <p><img data-src="images/pri.jpg" style="border-radius:1em;margin-top:auto"></p>
 <p>Priscilla Minotti</p>
 </div><div class="column" style="width:20%;">
-<p><img data-src="images/maria.jpg" style="border-radius:1em;margin-top:auto"></p>
+<p><img data-src="images/maria.jpeg" style="border-radius:1em;margin-top:auto"></p>
 <p>María Nanton</p>
 <p><img data-src="images/jesi.png" style="border-radius:1em;margin-top:auto" width="270"></p>
 <p>Jesica Formoso</p>
@@ -276,74 +277,78 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 <h1>Introducción a la validación de datos</h1>
 
 </section>
-<section id="herramienta-1-validate" class="slide level2">
-<h2>Herramienta 1: validate</h2>
-<div>
-<ul>
-<li class="fragment">MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)</li>
-<li class="fragment">Apariencia</li>
-</ul>
+<section id="validate" class="slide level2">
+<h2>validate</h2>
+<p>MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">##   name items passes fails nNA error warning        expression</span></span>
 <span id="cb1-2"><a></a><span class="do">## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)</span></span>
 <span id="cb1-3"><a></a><span class="do">## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)</span></span>
 <span id="cb1-4"><a></a><span class="do">## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="herramienta-2-assertr" class="slide level2">
-<h2>Herramienta 2: assertr</h2>
-<div>
-<p><img data-src="images/hex_assertr.png"></p>
-<ul>
-<li class="fragment"><p>Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.</p></li>
-<li class="fragment"><p>Apariencia</p></li>
-</ul>
+<section id="assertr" class="slide level2">
+<h2>assertr</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex_assertr.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<p>Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 <a href="https://docs.ropensci.org/assertr/" class="uri">https://docs.ropensci.org/assertr/</a> (website) <a href="https://github.com/ropensci/assertr" class="uri">https://github.com/ropensci/assertr</a></p>
+</div></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="do">## verification [mpg &gt;= 0] failed! (1 failure)</span></span>
 <span id="cb2-2"><a></a><span class="do">## </span></span>
 <span id="cb2-3"><a></a><span class="do">##     verb redux_fn predicate column index value</span></span>
 <span id="cb2-4"><a></a><span class="do">## 1 verify       NA  mpg &gt;= 0     NA     5    NA</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="herramienta-3-data.validator" class="slide level2">
-<h2>Herramienta 3: data.validator</h2>
-<div>
-<p><img data-src="images/hex_datavalidator.png"></p>
-<ul>
-<li class="fragment"><p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.</p></li>
-<li class="fragment"><p>Apariencia</p></li>
-</ul>
+<section id="data.validator" class="slide level2">
+<h2>data.validator</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex_datavalidator.png" class="quarto-figure quarto-figure-center" width="240"></p>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, <a href="https://github.com/Appsilon/data.validator" class="uri">https://github.com/Appsilon/data.validator</a>, <a href="https://appsilon.github.io/data.validator/" class="uri">https://appsilon.github.io/data.validator/</a>.</p>
+</div></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#&gt; Validation summary: </span></span>
 <span id="cb3-2"><a></a><span class="co">#&gt;  Number of successful validations: 1</span></span>
 <span id="cb3-3"><a></a><span class="co">#&gt;  Number of validations with warnings: 1</span></span>
-<span id="cb3-4"><a></a><span class="co">#&gt;  Number of failed validations: 4</span></span>
-<span id="cb3-5"><a></a><span class="co">#&gt; </span></span>
-<span id="cb3-6"><a></a><span class="co">#&gt; Advanced view: </span></span>
-<span id="cb3-7"><a></a><span class="co">#&gt; </span></span>
-<span id="cb3-8"><a></a><span class="co">#&gt; </span></span>
-<span id="cb3-9"><a></a><span class="co">#&gt; |table_name |description                                       |type    | total_violations|</span></span>
-<span id="cb3-10"><a></a><span class="co">#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|</span></span>
-<span id="cb3-11"><a></a><span class="co">#&gt; |mtcars     |Column drat has only positive values              |success |               NA|</span></span>
-<span id="cb3-12"><a></a><span class="co">#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|</span></span>
-<span id="cb3-13"><a></a><span class="co">#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|</span></span>
-<span id="cb3-14"><a></a><span class="co">#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|</span></span>
-<span id="cb3-15"><a></a><span class="co">#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|</span></span>
-<span id="cb3-16"><a></a><span class="co">#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img data-src="images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp"></p>
-</div>
+<span id="cb3-4"><a></a><span class="co">#&gt;  Number of failed validations: 1</span></span>
+<span id="cb3-5"><a></a><span class="co">#&gt; |table_name |description                                       |type    | total_violations|</span></span>
+<span id="cb3-6"><a></a><span class="co">#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|</span></span>
+<span id="cb3-7"><a></a><span class="co">#&gt; |mtcars     |Column drat has only positive values              |success |               NA|</span></span>
+<span id="cb3-8"><a></a><span class="co">#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|</span></span>
+<span id="cb3-9"><a></a><span class="co">#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="herramienta-4-pointblank" class="slide level2">
-<h2>Herramienta 4: pointblank</h2>
-<div>
-<p><img data-src="images/hex_pointblank.svg"></p>
-<ul>
-<li class="fragment"><p>Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.</p></li>
-<li class="fragment"><p>Apariencia</p>
-<p><img data-src="images/agent_report.png"></p></li>
-</ul>
+<section id="data.validator-1" class="slide level2">
+<h2>data.validator</h2>
+
+<img data-src="images/6525256482c9e9a06c7a9d3c_65b29f6e7518486cd0c6c201_3-1.webp" class="quarto-figure quarto-figure-center r-stretch" width="460"></section>
+<section id="pointblank" class="slide level2">
+<h2>pointblank</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex_pointblank.svg" class="quarto-figure quarto-figure-center" width="240"></p>
+</figure>
 </div>
+</div><div class="column" style="width:65%;">
+<p>Iannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, <a href="https://github.com/rstudio/pointblank" class="uri">https://github.com/rstudio/pointblank</a>, <a href="https://rstudio.github.io/pointblank/" class="uri">https://rstudio.github.io/pointblank/</a>.</p>
+</div></div>
 </section>
+<section id="pointblank-1" class="slide level2">
+<h2>pointblank</h2>
+
+<img data-src="images/agent_report.png" class="quarto-figure quarto-figure-center r-stretch" width="240"></section>
 <section id="conocen-alguna-de-ellas" class="slide level2">
 <h2>¿Conocen alguna de ellas?</h2>
-</section>
+
+<img data-src="images/analystdog.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="en-qué-difieren-estas-bibliotecas" class="slide level2">
 <h2>¿En qué difieren estas bibliotecas?</h2>
 <div>
@@ -357,15 +362,23 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 </section>
 <section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo" class="slide level2">
 <h2>¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
-</section></section>
+</section>
+<section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1" class="slide level2">
+<h2>¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
+
+<img data-src="images/bearing.jpeg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<section id="por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2" class="slide level2">
+<h2>¿Por qué creen que tiene sentido usar una biblioteca de este tipo?</h2>
+
+<img data-src="images/document.jpeg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section></section>
 <section>
 <section id="un-framework-para-la-evaluación-de-la-calidad-de-los-datos" class="title-slide slide level1 section center">
 <h1>Un framework para la evaluación de la calidad de los datos</h1>
 
 </section>
-<section id="facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="slide level2">
-<h2>“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”</h2>
-<p>Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [<a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7">CrossRef</a>]</p>
+<section id="a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r" class="slide level2">
+<h2>“A data quality framework for observational health research data collections with software implementations in R”</h2>
+<p>Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [<a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01252-7">CrossRef</a>]</p>
 <div>
 <ul>
 <li class="fragment"><strong>Integridad</strong>: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?</li>
@@ -378,18 +391,27 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 <section id="section-1" class="slide level2">
 <h2></h2>
 
-<img data-src="images/dominios_paquetes.png" class="r-stretch"></section>
+<img data-src="images/dominios_paquetes.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="a-validar" class="slide level2">
 <h2>A validar!</h2>
 </section>
 <section id="para-leer-más" class="slide level2">
 <h2>Para leer más</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/testing.jpeg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
 <ul>
-<li><p>assertr <a href="https://docs.ropensci.org/assertr/" class="uri">https://docs.ropensci.org/assertr/</a></p></li>
-<li><p>validate <a href="https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html" class="uri">https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html</a></p></li>
-<li><p>data.validator <a href="https://appsilon.github.io/data.validator/index.html" class="uri">https://appsilon.github.io/data.validator/index.html</a></p></li>
-<li><p>pointblank <a href="https://rstudio.github.io/pointblank/index.html" class="uri">https://rstudio.github.io/pointblank/index.html</a></p></li>
+<li><p><a href="https://docs.ropensci.org/assertr/">assertr</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html">Data Validation Cookbook</a> con <strong>validate</strong></p></li>
+<li><p><a href="https://appsilon.github.io/data.validator/index.html">data.validator</a></p></li>
+<li><p><a href="https://rstudio.github.io/pointblank/index.html">pointblank</a></p></li>
 </ul>
+</div></div>
 </section></section>
 <section>
 <section id="antes-de-que-te-vayas.." class="title-slide slide level1 center">
@@ -420,12 +442,9 @@ María Nanton y Betsy Cohen<br>RLadies Buenos Aires
 </figure>
 </div>
 </div></div>
+
+
 </section></section>
-<section id="muchas-gracias" class="title-slide slide level1 center">
-<h1>¡Muchas gracias!</h1>
-
-
-</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/logo-rladies-BA.png" class="slide-logo"></p>

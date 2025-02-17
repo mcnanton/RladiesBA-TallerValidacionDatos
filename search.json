@@ -4,35 +4,35 @@
     "href": "slides/slide1.html",
     "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)\n\n\n\n\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|\n\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n\n\n\n\n\n\n\n\n\n\nMateriales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
+    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)\n\n\n\n\n\n\n\n\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr\n\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA\n\n\n\n\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\n\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 1\n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, https://github.com/rstudio/pointblank, https://rstudio.github.io/pointblank/.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMateriales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
   },
   {
-    "objectID": "slides/slide1.html#herramienta-1-validate",
-    "href": "slides/slide1.html#herramienta-1-validate",
+    "objectID": "slides/slide1.html#validate",
+    "href": "slides/slide1.html#validate",
     "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
+    "text": "MPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
   },
   {
-    "objectID": "slides/slide1.html#herramienta-2-assertr",
-    "href": "slides/slide1.html#herramienta-2-assertr",
+    "objectID": "slides/slide1.html#assertr",
+    "href": "slides/slide1.html#assertr",
     "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
+    "text": "Fischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr\n\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
   },
   {
-    "objectID": "slides/slide1.html#herramienta-3-data.validator",
-    "href": "slides/slide1.html#herramienta-3-data.validator",
+    "objectID": "slides/slide1.html#data.validator",
+    "href": "slides/slide1.html#data.validator",
     "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
+    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\n\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 1\n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
   },
   {
-    "objectID": "slides/slide1.html#herramienta-4-pointblank",
-    "href": "slides/slide1.html#herramienta-4-pointblank",
+    "objectID": "slides/slide1.html#pointblank",
+    "href": "slides/slide1.html#pointblank",
     "title": "Introducción a la validación de datos",
     "section": "",
-    "text": "Dubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia"
+    "text": "Iannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, https://github.com/rstudio/pointblank, https://rstudio.github.io/pointblank/."
   },
   {
     "objectID": "slides/slide1.html#en-qué-difieren-estas-bibliotecas",
@@ -42,11 +42,11 @@
     "text": "Materiales de apoyo, tutoriales y artículos sobre cada una\nFunciones específicas que cada uno provee, especialmente funciones de predicado (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)\nTipo de reportes que generan\nFormato de reportes generados"
   },
   {
-    "objectID": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
-    "href": "slides/slide1.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "objectID": "slides/slide1.html#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "href": "slides/slide1.html#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
     "title": "Introducción a la validación de datos",
-    "section": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”",
-    "text": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
+    "section": "“A data quality framework for observational health research data collections with software implementations in R”",
+    "text": "“A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
   },
   {
     "objectID": "slides/slide1.html#a-validar",
@@ -60,7 +60,7 @@
     "href": "slides/slide1.html#para-leer-más",
     "title": "Introducción a la validación de datos",
     "section": "Para leer más",
-    "text": "Para leer más\n\nassertr https://docs.ropensci.org/assertr/\nvalidate https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html\ndata.validator https://appsilon.github.io/data.validator/index.html\npointblank https://rstudio.github.io/pointblank/index.html"
+    "text": "Para leer más\n\n\n\n\n\n\n\n\n\nassertr\nData Validation Cookbook con validate\ndata.validator\npointblank"
   },
   {
     "objectID": "slides/intro.html",
@@ -77,11 +77,11 @@
     "text": "Asegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
   },
   {
-    "objectID": "slides/intro.html#agradecimientos",
-    "href": "slides/intro.html#agradecimientos",
+    "objectID": "slides/intro.html#reconocimientos",
+    "href": "slides/intro.html#reconocimientos",
     "title": "Validación de datos - RLadies Buenos Aires",
-    "section": "Agradecimientos",
-    "text": "Agradecimientos\nAuspician RLadies Buenos Aires:"
+    "section": "Reconocimientos",
+    "text": "Reconocimientos\nLa presentación “Data Validation in R - From Principles to Tools and Packages” de Dra. Catarina Constantinescu sirvió de inspiración para los contenidos de este taller. También agradecemos a las personas que, en el marco del desarrollo paquetes de validación de datos, redactaron guías, libros y tutoriales que publicaron de manera abierta.\nAuspician RLadies Buenos Aires:"
   },
   {
     "objectID": "slides/intro.html#codigo-de-conducta",
@@ -232,11 +232,11 @@
     "text": "Mientras esperás a que comencemos…\nAsegurate de haber seguido las instrucciones de configuración y que tenés los programas y paquetes que necesitás para seguir el taller:\nmcnanton.github.io/RladiesBA-TallerValidacionDatos/setup.html."
   },
   {
-    "objectID": "slides/index.html#agradecimientos",
-    "href": "slides/index.html#agradecimientos",
+    "objectID": "slides/index.html#reconocimientos",
+    "href": "slides/index.html#reconocimientos",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "Agradecimientos",
-    "text": "Agradecimientos\nAuspician RLadies Buenos Aires:"
+    "section": "Reconocimientos",
+    "text": "Reconocimientos\nLa presentación “Data Validation in R - From Principles to Tools and Packages” de Dra. Catarina Constantinescu sirvió de inspiración para los contenidos de este taller. También agradecemos a las personas que, en el marco del desarrollo paquetes de validación de datos, redactaron guías, libros y tutoriales que publicaron de manera abierta.\nAuspician RLadies Buenos Aires:"
   },
   {
     "objectID": "slides/index.html#codigo-de-conducta",
@@ -260,32 +260,46 @@
     "text": "Betsabé Cohen\n\n\nMónica Alonso\n\n\nKarina Bartolomé\n\nVirginia García Alonso\n\n\nJimena Saucedo\n\nPriscilla Minotti\n\n\nMaría Nanton\n\nJesica Formoso"
   },
   {
-    "objectID": "slides/index.html#herramienta-1-validate",
-    "href": "slides/index.html#herramienta-1-validate",
+    "objectID": "slides/index.html#validate",
+    "href": "slides/index.html#validate",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "Herramienta 1: validate",
-    "text": "Herramienta 1: validate\n\n\nMPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\nApariencia\n\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
+    "section": "validate",
+    "text": "validate\nMPJ van der Loo and E de Jonge (2021). Data Validation Infrastructure for R. Journal of Statistical Software, 97(10)\n##   name items passes fails nNA error warning        expression\n## 1   V1    60     56     4   0 FALSE   FALSE  !is.na(turnover)\n## 2   V2    60     24    36   0 FALSE   FALSE !is.na(other.rev)\n## 3   V3    60     55     5   0 FALSE   FALSE    !is.na(profit)"
   },
   {
-    "objectID": "slides/index.html#herramienta-2-assertr",
-    "href": "slides/index.html#herramienta-2-assertr",
+    "objectID": "slides/index.html#assertr",
+    "href": "slides/index.html#assertr",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "Herramienta 2: assertr",
-    "text": "Herramienta 2: assertr\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr, https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr.\nApariencia\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
+    "section": "assertr",
+    "text": "assertr\n\n\n\n\n\n\n\n\nFischetti T (2025). assertr: Assertive Programming for R Analysis Pipelines. R package version 3.0.1 https://docs.ropensci.org/assertr/ (website) https://github.com/ropensci/assertr\n\n## verification [mpg &gt;= 0] failed! (1 failure)\n## \n##     verb redux_fn predicate column index value\n## 1 verify       NA  mpg &gt;= 0     NA     5    NA"
   },
   {
-    "objectID": "slides/index.html#herramienta-3-data.validator",
-    "href": "slides/index.html#herramienta-3-data.validator",
+    "objectID": "slides/index.html#data.validator",
+    "href": "slides/index.html#data.validator",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "Herramienta 3: data.validator",
-    "text": "Herramienta 3: data.validator\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 4\n#&gt; \n#&gt; Advanced view: \n#&gt; \n#&gt; \n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |Column drat has only values larger than 3         |error   |                4|\n#&gt; |mtcars     |Each row sum for am:vs columns is less or equal 1 |error   |                7|\n#&gt; |mtcars     |For wt and qsec we have: abs(col) &lt; 2 * sd(col)   |error   |                4|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
+    "section": "data.validator",
+    "text": "data.validator\n\n\n\n\n\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\n\n#&gt; Validation summary: \n#&gt;  Number of successful validations: 1\n#&gt;  Number of validations with warnings: 1\n#&gt;  Number of failed validations: 1\n#&gt; |table_name |description                                       |type    | total_violations|\n#&gt; |:----------|:-------------------------------------------------|:-------|----------------:|\n#&gt; |mtcars     |Column drat has only positive values              |success |               NA|\n#&gt; |mtcars     |vs and am values equal 0 or 2 only                |error   |               27|\n#&gt; |mtcars     |vs and am values should equal 3 or 4              |warning |               24|"
   },
   {
-    "objectID": "slides/index.html#herramienta-4-pointblank",
-    "href": "slides/index.html#herramienta-4-pointblank",
+    "objectID": "slides/index.html#data.validator-1",
+    "href": "slides/index.html#data.validator-1",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "Herramienta 4: pointblank",
-    "text": "Herramienta 4: pointblank\n\n\n\nDubel M, Przytuła P, Nowicki J, Igras K (2024). data.validator: Automatic Data Validation and Reporting. R package version 0.2.1, https://github.com/Appsilon/data.validator, https://appsilon.github.io/data.validator/.\nApariencia"
+    "section": "data.validator",
+    "text": "data.validator"
+  },
+  {
+    "objectID": "slides/index.html#pointblank",
+    "href": "slides/index.html#pointblank",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
+    "section": "pointblank",
+    "text": "pointblank\n\n\n\n\n\n\n\n\nIannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization of Metadata for Local and Remote Tables. R package version 0.12.2.9000, https://github.com/rstudio/pointblank, https://rstudio.github.io/pointblank/."
+  },
+  {
+    "objectID": "slides/index.html#pointblank-1",
+    "href": "slides/index.html#pointblank-1",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
+    "section": "pointblank",
+    "text": "pointblank"
   },
   {
     "objectID": "slides/index.html#conocen-alguna-de-ellas",
@@ -309,11 +323,25 @@
     "text": "¿Por qué creen que tiene sentido usar una biblioteca de este tipo?"
   },
   {
-    "objectID": "slides/index.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
-    "href": "slides/index.html#facilitating-harmonized-data-quality-assessments.-a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "objectID": "slides/index.html#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1",
+    "href": "slides/index.html#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-1",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
-    "section": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”",
-    "text": "“Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. “Facilitating harmonized data quality assessments. A data quality framework for observational health research data collections with software implementations in R”. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
+    "section": "¿Por qué creen que tiene sentido usar una biblioteca de este tipo?",
+    "text": "¿Por qué creen que tiene sentido usar una biblioteca de este tipo?"
+  },
+  {
+    "objectID": "slides/index.html#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2",
+    "href": "slides/index.html#por-qué-creen-que-tiene-sentido-usar-una-biblioteca-de-este-tipo-2",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
+    "section": "¿Por qué creen que tiene sentido usar una biblioteca de este tipo?",
+    "text": "¿Por qué creen que tiene sentido usar una biblioteca de este tipo?"
+  },
+  {
+    "objectID": "slides/index.html#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "href": "slides/index.html#a-data-quality-framework-for-observational-health-research-data-collections-with-software-implementations-in-r",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
+    "section": "“A data quality framework for observational health research data collections with software implementations in R”",
+    "text": "“A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
   },
   {
     "objectID": "slides/index.html#a-validar",
@@ -327,7 +355,7 @@
     "href": "slides/index.html#para-leer-más",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Para leer más",
-    "text": "Para leer más\n\nassertr https://docs.ropensci.org/assertr/\nvalidate https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html\ndata.validator https://appsilon.github.io/data.validator/index.html\npointblank https://rstudio.github.io/pointblank/index.html"
+    "text": "Para leer más\n\n\n\n\n\n\n\n\n\nassertr\nData Validation Cookbook con validate\ndata.validator\npointblank"
   },
   {
     "objectID": "slides/index.html#seguinos",
