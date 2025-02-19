@@ -232,7 +232,7 @@ agente <-
                label = "Agente de Chequeo de NAs y duplicados")  |> # Creamos al agente
   
   col_vals_not_null(vars(everything()), label = "Ver si hay NA") |> # Datos faltantes
-  rows_distinct(everything())  |> # Sin duplicados
+  rows_distinct(everything(),label = "Ver si hay duplicados")  |> # Sin duplicados
   
   interrogate()
 
@@ -501,7 +501,7 @@ dataset_sucio  |>
   chain_start() |> 
   
   assert(not_na, everything(), error_fun = just_warn) |> # Valores faltantes en todo el dataset
-  assert_rows(col_concat, is_uniq, everything()) # Sin duplicados
+  assert_rows(col_concat, is_uniq, everything()) |>  # Sin duplicados
 
   assert(not_na, largo_pico_mm, alto_pico_mm, largo_aleta_mm, masa_corporal_g) |> # Valores faltantes en columnas numéricas
   # Podemos setear los limites tanto superior como inferior
