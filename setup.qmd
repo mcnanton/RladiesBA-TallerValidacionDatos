@@ -13,7 +13,6 @@ Descargá e instalá las últimas versiones de R, RStudio y Quarto:
 
 -   R 4.2.3 o superior: <https://cran.r-project.org>
 -   RStudio 2024.04.0 or superior: <https://posit.co/download/rstudio-desktop>
--   
 
 #### 2. Paquetes
 

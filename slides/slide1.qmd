@@ -112,6 +112,8 @@ Schmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damero
 
 ## 
 
+Mariño, J.; Kasbohm, E.; Struckmann, S.; Kapsner, L.A.; Schmidt, C.O. **R Packages for Data Quality Assessments and Data Monitoring: A Software Scoping Review with Recommendations for Future Developments**. Appl. Sci. 2022, 12, 4238. https://doi.org/10.3390/app12094238
+
 ![](images/dominios_paquetes.png){fig-align="center"}
 
 ## A validar!

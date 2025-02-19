@@ -10,7 +10,7 @@ title: "Materiales"
 <iframe class="slides" src="/slides/index.html"></iframe>
 ```
 
-## Diapositivas de la presentación
+## Código
 
 Accedé al script del taller en [este repositorio](https://github.com/mcnanton/RladiesBA-TallerValidacionDatos/)
 
