@@ -127,7 +127,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "",
     "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub",
     "crumbs": [
@@ -137,7 +137,7 @@
   {
     "objectID": "index.html#fecha-y-ubicación",
     "href": "index.html#fecha-y-ubicación",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "",
     "text": "📆 19 de febrero, 2025\n⏰18:30 pm - 20:30 pm Argentina (UTC -3)\n🗺️ Online (el link de zoom se compartirá el mismo día)\n🐱 Repositorio en GitHub",
     "crumbs": [
@@ -147,7 +147,7 @@
   {
     "objectID": "index.html#sobre-este-taller",
     "href": "index.html#sobre-este-taller",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Sobre este taller",
     "text": "Sobre este taller\nEl taller ¡NA pasa nada!: aprende a validar datos con R nos presentará 4 bibliotecas con funciones específicas para validar calidad de datos: validate, assertr, data.validator y pointblank. Aprenderemos como usar estas herramientas para evaluar la calidad de un dataset de manera rápida, automática y descriptiva en cuanto a su integridad, completitud, consistencia y exactitud.",
     "crumbs": [
@@ -157,7 +157,7 @@
   {
     "objectID": "index.html#objetivos-de-aprendizaje",
     "href": "index.html#objetivos-de-aprendizaje",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Objetivos de aprendizaje",
     "text": "Objetivos de aprendizaje\n\nConocer un framework de evaluación de calidad de datos inmediatamente aplicable mediante el uso de R\nFamiliarizarse con las bibliotecas validate, assertr, data.validator y pointblank\nAprender sobre las funciones predicado y cómo utilizarlas para la evaluación univariada, multivariada y a nivel dataset\nEntender las salidas de información de las 4 bibliotecas y qué tipo de reporte puede generarse con cada una",
     "crumbs": [
@@ -167,7 +167,7 @@
   {
     "objectID": "index.html#instructoras",
     "href": "index.html#instructoras",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Instructoras",
     "text": "Instructoras\n\nMaría Nanton es Data Scientist, maestranda en Data Mining y coordinadora del equipo de Ciencia de Datos de la Gerencia de Gestión de Información y Estadísticas en Salud de la Ciudad de Buenos Aires. Además, es organizadora de RLadies Buenos Aires 💜 y es colaboradora en MetaDocencia 🍎.\n\n\nBetsy Cohen es socióloga de la Universidad de Buenos Aires y maestranda en estadística de la Universidad Nacional de Tres de Febrero. Además, es organizadora de RLadies Buenos Aires 💜 y del Núcleo de Innovación Social.",
     "crumbs": [
@@ -177,7 +177,7 @@
   {
     "objectID": "index.html#código-de-conducta",
     "href": "index.html#código-de-conducta",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Código de Conducta",
     "text": "Código de Conducta\nR-Ladies se dedica a proporcionar una experiencia libre de acoso para todes. Conocé el Código de Conducta que se aplica en todos los espacios de participación de R-Ladies Global y del capitulo, incluyendo reuniones presenciales o virtuales, Twitter, Slack, listas de correo, tanto online como offline.",
     "crumbs": [
@@ -187,7 +187,7 @@
   {
     "objectID": "index.html#agradecimientos",
     "href": "index.html#agradecimientos",
-    "title": "Titulo del taller",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "Agradecimientos",
     "text": "Agradecimientos\nEste taller fue auspiciado por:",
     "crumbs": [
