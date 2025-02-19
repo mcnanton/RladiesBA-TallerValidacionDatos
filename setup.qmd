@@ -19,7 +19,6 @@ Descargá e instalá las últimas versiones de R, RStudio y Quarto:
 
 Instalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:
 
-
 ```{r}
 
 paquetes_lista <- c(
@@ -28,6 +27,7 @@ paquetes_lista <- c(
 install.packages(paquetes_lista)
 
 ```
+
 #### 3. Ejercicios
 
-Descargá el archivo [Taller-validacion-ejercicios.rar](https://github.com/JFormoso/quarto-rladiesBA/blob/main/Taller-quarto-ejercicios.rar) y descomprimilo en tu computadora. 
+Descargá el archivo `actividades_taller_validacion.qmd` del [repositorio del taller](https://github.com/mcnanton/RladiesBA-TallerValidacionDatos)

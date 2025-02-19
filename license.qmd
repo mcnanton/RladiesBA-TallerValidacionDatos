@@ -11,7 +11,4 @@ Estos materiales están publicados bajo la licencia [Creative Commons Attributio
 -   Uso no comercial: No está permitido usar el material con fines comerciales.
 -   Compartir igual: Si adaptás o transformas el material, debés distribuirlo bajo la misma licencia.
 
-{{< fa brands creative-commons size=2x >}} 
-{{< fa brands creative-commons-by size=2x >}} 
-{{< fa brands creative-commons-nc size=2x >}} 
-{{< fa brands creative-commons-sa size=2x >}}
+{{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}

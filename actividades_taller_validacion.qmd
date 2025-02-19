@@ -1,0 +1,644 @@
+---
+title: "desarrollo_taller_validacion"
+---
+
+```{r}
+library(tidyverse) # Transformación de datos
+library(datos) # Dataset ejemplo
+library(messy) # Generación de base "sucia"
+
+# Bibliotecas para validación de calidad de datos
+library(pointblank) 
+library(data.validator)
+library(assertr)
+library(validate)
+```
+
+## Dataset
+
+Cargamos nuestro dataset: si bien tiene algunos datos faltantes, vamos a tomarlo como modelo de "dataset limpio"
+
+```{r}
+dataset_limpio <- datos::pinguinos
+```
+
+Lo ensuciamos con una función almacenada en el script "helpers.R"
+
+```{r}
+source("helpers.R")
+
+nivel_de_suciedad <- 0.01
+
+dataset_sucio <- ensuciar(dataset_limpio, nivel_de_suciedad)
+```
+
+```{r}
+glimpse(dataset_sucio)
+```
+
+```{r}
+view(dataset_sucio)
+```
+
+**¿Qué problemas ven en este dataset?**
+
+## Validaciones
+
+**¿Qué opinan que deberíamos validar de este dataset?**
+
+### Completitud
+
+#### Valores faltantes
+
+##### Sin bibliotecas específicas
+
+```{r}
+anyNA(dataset_sucio)
+```
+
+```{r}
+dataset_sucio |>
+  summarize(across(everything(), ~ sum(is.na(.))))
+```
+
+##### validate
+
+```{r}
+# Generamos nuestro set de reglas con la función validator
+reglas <- validator(sin_faltantes = is_complete(.))
+
+# Confrontamos al dataset sucio con el set de reglas
+resultado <- confront(dataset_sucio, reglas)
+
+resultado
+```
+
+```{r}
+# Resumen del resultado
+summary(resultado)
+```
+
+Interesante: podemos compartirnos las reglas via YAML!
+
+##### assertr
+
+Esta biblioteca provee 3 tipos de chequeos que nombra de la siguiente manera:
+
+**verify** (chequeos sobre dataframe entero)
+
+**assert** (chequeos sobre columnas)
+
+**insist** (chequeos sobre columnas de manera dinámica)
+
+```{r}
+dataset_sucio |> 
+  assert(not_na, everything(), error_fun = just_warn)
+```
+
+##### data.validator
+
+Nota: esta herramienta nos permite usar funciones predicado de **assertr**!
+
+```{r}
+
+# Creamos reporte (por ahora vacío)
+reporte <- data_validation_report()
+
+
+validate(dataset_sucio)  |> # Empezamos la cadena de validación
+  
+  validate_cols(not_na, everything(), description = "Ver si hay NA")  |>  # Valores faltantes
+  
+  add_results(reporte) # Agregamos resultados al reporte
+
+
+# Exploramos un resumen de los resultados del reporte
+print(reporte) 
+
+```
+
+```{r}
+# Obtenemos una tabla con el detalle de los resultados, que se muestran a nivel columna
+get_results(reporte, unnest = FALSE)
+```
+
+Tambien podemos guardarlo como html:
+
+```{r}
+save_report(reporte)
+```
+
+##### pointblank
+
+Si bien este paquete admite flujos de trabajo más sintéticos, vamos a explorar su funcionalidad de creación de "agentes" para la validación de datos:
+
+```{r}
+# Creamos un "agente" que validará los datos, y explicitamos la tabla objetivo
+agente <- create_agent(tbl = dataset_sucio, 
+               label = "Agente de Chequeo de NAs")
+
+# Incorporamos al agente la regla a validar
+agente <- agente  |> 
+  col_vals_not_null(vars(everything()), label = "Ver si hay NA") # Valores faltantes
+
+# El agente interroga a la tabla objetivo para evaluar si cumple o no las reglas de validación
+agente |> interrogate()
+
+```
+
+### Integridad
+
+#### Duplicados
+
+##### Sin bibliotecas específicas
+
+```{r}
+
+dataset_sucio |> 
+  filter(duplicated(id))
+
+```
+
+
+Devuelve todo registro duplicado
+
+```{r}
+duplicados <- dataset_sucio[duplicated(dataset_sucio) | duplicated(dataset_sucio, fromLast = TRUE), ]
+print(duplicados)
+
+```
+
+```{r}
+anyDuplicated(dataset_sucio, fromLast = T)
+```
+
+También podemos hacer este chequeo con **janitor**, una biblioteca no especializada en validación de datos:
+
+```{r}
+janitor::get_dupes(dataset_sucio)
+```
+
+##### validate
+
+```{r}
+
+# Almacenamos nuestras reglas en un objeto
+reglas <- validator(sin_faltantes = is_complete(.), # Valores faltantes
+                    sin_duplicados = is_unique(.)) # Sin duplicados
+
+# Confrontamos al dataset sucio con el set de reglas
+resultado <- confront(dataset_sucio, reglas)
+
+resultado
+
+```
+
+```{r}
+# Ver el resultado
+summary(resultado)
+```
+
+##### assertr
+
+```{r}
+
+dataset_sucio |>
+  
+  assert(not_na, everything(), error_fun = just_warn) |> # Valores faltantes
+  
+  assert_rows(col_concat, is_uniq, everything(), error_fun = just_warn) # Sin duplicados
+
+```
+
+##### data.validator
+
+```{r}
+
+# Creamos reporte (por ahora vacío)
+reporte <- data_validation_report()
+
+validate(dataset_sucio) |> # Empezamos la cadena de validación
+  
+  validate_cols(not_na, everything(), description = "Ver si hay NA")  |> # Valores faltantes
+  assert_rows(duplicates_across_cols, in_set(FALSE), everything(), description = "Ver si hay duplicados") |> # Sin duplicados
+  
+  add_results(reporte) # Agregamos resultados al reporte
+
+
+print(reporte)
+
+```
+
+```{r}
+# Obtenemos una tabla con el detalle de los resultados, que se muestran a nivel columna
+get_results(reporte, unnest = FALSE)
+```
+
+##### pointblank
+
+Podemos usar la funcion rows_distinct que se puede aplicar directamente sobre el agente (como mostramos en este ejemplo) pero que tambien cuenta con versiones de testeo como test_row_distinct y expect_rows_distinct
+
+```{r}
+
+# Ensayamos como armar la validación en un solo chunk de código:
+agente <-
+  create_agent(tbl = dataset_sucio, 
+               label = "Agente de Chequeo de NAs y duplicados")  |> # Creamos al agente
+  
+  col_vals_not_null(vars(everything()), label = "Ver si hay NA") |> # Datos faltantes
+  rows_distinct(everything())  |> # Sin duplicados
+  
+  interrogate()
+
+agente
+
+```
+
+### Consistencia
+
+#### Valores numéricos inadmisibles
+
+##### Sin bibliotecas específicas
+
+```{r}
+
+dataset_sucio |> 
+  select(where(is.numeric))
+
+```
+
+Para empezar no tenemos las variables numericas como numericas por lo que las tenemos que convertir. 
+Nota: esta validación también puede hacerse con bibliotecas específicas!
+
+```{r}
+son_numericas <- c('largo_pico_mm','alto_pico_mm','largo_aleta_mm','masa_corporal_g')
+
+dataset_sucio <- dataset_sucio |> 
+  mutate(across(son_numericas,as.numeric)) # Pasamos a numéricas a las 4 variables identificadas
+
+glimpse(dataset_sucio)
+```
+
+Buscamos valores atípicos:
+
+```{r}
+
+# Visualización de valores atípicos usando boxplot
+dataset_sucio  |> 
+  select(where(is.numeric))  |> 
+  gather(key = "variable", value = "valor")  |> 
+  ggplot(aes(x = variable, y = valor)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Visualización de Valores Atípicos (Outliers)", y = "Valor", x = "Variable") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+```{r}
+dataset_sucio  |> 
+  select(where(is.numeric)) |> 
+  summary()
+```
+
+```{r}
+dataset_sucio |> 
+  mutate(across(where(is.numeric), ~ifelse(is.na(.), mean(., na.rm = TRUE), .))) |> 
+  mutate(largo_pico_mm = if_else(largo_pico_mm > 50, 50,largo_pico_mm),
+         alto_pico_mm  = if_else(alto_pico_mm > 20, 20,alto_pico_mm),
+         largo_aleta_mm  = if_else(largo_aleta_mm > 220, 220,largo_aleta_mm),
+         masa_corporal_g = if_else(masa_corporal_g > 5500, 5500, masa_corporal_g)
+         ) |> 
+  select(where(is.numeric)) |> 
+  summary()
+```
+
+##### validate
+
+Estas mismas transformaciones que creamos arriba con `across` podriamos aplicarlas como reglas usando el paquete validate en el que
+
+\- Indique los valores NA por la media de cada columna
+
+\- Indique cuantos casos superan por un factor de 1.5 veces el rango intercuartílico
+
+```{r}
+reglas <- validator(
+  
+  sin_faltantes = is_complete(.), # Valores faltantes en todo el dataset
+  sin_duplicados = is_unique(.), # Sin duplicados
+  
+  # Sin tienen NA las variables numéricas
+  largo_pico_mm_no_na = !is.na(largo_pico_mm),
+  alto_pico_mm_no_na = !is.na(alto_pico_mm),
+  largo_aleta_mm_no_na = !is.na(largo_aleta_mm),
+  masa_corporal_g_no_na = !is.na(masa_corporal_g),
+  
+  # Chequear los límites máximos
+  largo_pico_mm_max = largo_pico_mm <= 50,
+  alto_pico_mm_max = alto_pico_mm <= 20,
+  largo_aleta_mm_max = largo_aleta_mm <= 220,
+  masa_corporal_g_max = masa_corporal_g <= 5500
+)
+
+# Confrontar dataset con las reglas
+resultado <- confront(dataset_sucio, reglas)
+resultado
+
+```
+
+```{r}
+summary(resultado)
+```
+
+##### assertr
+
+```{r}
+
+dataset_sucio |> 
+  chain_start() |> # Armamos una cadena de validación!
+  
+  assert(not_na, everything()) |> # Valores faltantes
+  assert_rows(col_concat, is_uniq, everything()) |>  # Sin duplicados
+
+  assert(not_na, largo_pico_mm, alto_pico_mm, largo_aleta_mm, masa_corporal_g) |> # Sin NA en las variables numéricas
+  
+  # Chequear limite tanto superior como inferior
+  assert(within_bounds(30, 50), largo_pico_mm) |>
+  assert(within_bounds(10, 20), alto_pico_mm) |>
+  assert(within_bounds(120, 220), largo_aleta_mm) |>
+  assert(within_bounds(2000, 5500), masa_corporal_g) |> 
+    
+  chain_end(error_fun = just_warn) # Le pasamos a la cadena el argumento para que devuelva warning en caso de error
+  
+```
+
+##### data.validator
+
+```{r}
+# Creamos un reporte de 0
+
+reporte <- data_validation_report()
+
+between <- function(a, b) {
+  function(x) { 
+    # Asegurarse de que los NA no generen un error en la validación
+    ifelse(is.na(x), TRUE, a <= x & x <= b)
+  }
+}
+
+validate(dataset_sucio, name = "Verificación por limites")  |>
+  
+  validate_cols(not_na, everything(), description = "Ver si hay NA")  |> # Valores faltantes
+  assert_rows(duplicates_across_cols, in_set(FALSE), everything(), description = "Ver si hay duplicados") |> # Sin duplicados
+  
+  # Sin NA en las variables numéricas
+  validate_cols(not_na, largo_pico_mm, alto_pico_mm, largo_aleta_mm, masa_corporal_g, description = "NAs en variables numéricas") |> 
+  
+  # Chequear limite tanto superior como inferior
+  validate_cols(between(30, 50),largo_pico_mm, description = "Limites largo pico") |> 
+  validate_cols(between(10, 20),alto_pico_mm, description = "Limites alto pico") |>
+  validate_cols(between(120, 220),largo_aleta_mm, description = "Limites largo aleta") |>
+  validate_cols(between(2000, 5500),masa_corporal_g,  description = "Limites masa corporal") |> 
+  
+  add_results(reporte) 
+  
+
+# Mostrar reporte de validaciones
+
+print(reporte$get_validations())
+
+```
+
+##### pointblank
+
+```{r}
+
+# Crear el agente de validación
+agente <- 
+  create_agent(tbl = dataset_sucio, 
+               label = "Agente de Chequeo de NAs, duplicados y consistencia numérica") |> 
+  
+  col_vals_not_null(vars(everything()), label = "Ver si hay NA") |> # Datos faltantes
+  rows_distinct(everything())  |> # Sin duplicados
+  
+  col_vals_not_null(vars(where(is.numeric)), 
+                    label = "Verificar si hay NA en columnas numéricas") |> # Sin NA en las variables numéricas
+  
+  # Chequear limite tanto superior como inferior
+  col_vals_between(vars(largo_pico_mm),left = 30,right = 50,label = "Limites largo pico",na_pass = TRUE) |> 
+  col_vals_between(vars(alto_pico_mm),left = 10,right = 20,label = "Limites alto pico",na_pass = TRUE) |> 
+  col_vals_between(vars(largo_aleta_mm),left = 120,right = 220,label = "Limites largo aleta",na_pass = TRUE) |> 
+  col_vals_between(vars(masa_corporal_g),left = 2000,right = 5500,label = "Limites masa corporal",na_pass = TRUE) |> 
+  interrogate()
+
+agente
+
+```
+
+### Exactitud
+
+#### Valores categoricos inadmisibles
+
+##### Sin bibliotecas específicas
+
+```{r}
+
+dataset_sucio  |> 
+  select(where(is.character)) |> 
+  select(-id) |> 
+  mutate(across(everything(),as.factor)) |>  
+  summary()
+
+```
+
+```{r}
+# dataset_sucio %>%
+#    mutate(
+#     # arreglamos especie
+#     especie = str_replace_all(especie, "[^a-zA-ZáéíóúÁÉÍÓÚ]", ""),
+#     especie = str_replace_all(especie, "(?i)adelia", "Adelia"),
+#     especie = str_replace_all(especie, "(?i)papúa|papua", "Papúa"),
+#     especie = str_replace_all(especie, "(?i)barbijo", "Barbijo"),
+#     especie = as.factor(especie),
+#     
+#     # arreglamos isla
+#     isla = str_replace_all(isla, "[^a-zA-Z]", ""),
+#     isla = str_replace_all(isla, "(?i)dream", "Dream"),
+#     isla = str_replace_all(isla, "(?i)torgersen", "Torgersen"),
+#     isla = str_replace_all(isla, "(?i)biscoe", "Biscoe"),
+#     isla = as.factor(isla),
+#     
+#     # arreglamos sexo
+#     sexo = str_replace_all(sexo, "[^a-zA-Z]", ""),
+#     sexo = str_replace_all(sexo, "(?i)macho", "macho"),
+#     sexo = str_replace_all(sexo, "(?i)hembra", "hembra"),
+#     sexo = if_else(sexo == "NA", NA_character_,sexo),
+#     sexo = as.factor(sexo),
+#     
+#     # arreglamos anio 
+#     anio = str_replace_all(anio, "[^0-9]", ""),  
+#     anio = case_when(
+#       anio %in% c("2007","20070") ~  "2007",
+#       anio %in% c("20080") ~ "2008",
+#       anio %in% c("20090") ~"2009",
+#       TRUE ~anio),
+#     anio = ifelse(anio %in% c("2007", "2008", "2009"), anio, NA),  
+#     anio = as.factor(anio)  
+#   ) |> 
+#   select(especie,isla,sexo,anio) |> 
+#   summary()
+
+```
+
+##### validate
+
+Con validate podemos chequear de una lista de códigos con
+
+```{r}
+
+reglas <- validator(
+  
+  sin_faltantes = is_complete(.), # Valores faltantes en todo el dataset
+  sin_duplicados = is_unique(.), # Sin duplicados
+  
+  # Chequear si son numéricas
+  largo_pico_mm_es_numerico = is.numeric(largo_pico_mm),
+  alto_pico_mm_es_numerico = is.numeric(alto_pico_mm),
+  largo_aleta_mm_es_numerico = is.numeric(largo_aleta_mm),
+  masa_corporal_g_es_numerico = is.numeric(masa_corporal_g),
+  
+  # Chequear si tienen NA las variables numéricas
+  largo_pico_mm_no_na = !is.na(largo_pico_mm),
+  alto_pico_mm_no_na = !is.na(alto_pico_mm),
+  largo_aleta_mm_no_na = !is.na(largo_aleta_mm),
+  masa_corporal_g_no_na = !is.na(masa_corporal_g),
+  
+  # Chequear los límites máximos
+  largo_pico_mm_max = largo_pico_mm <= 50,
+  alto_pico_mm_max = alto_pico_mm <= 20,
+  largo_aleta_mm_max = largo_aleta_mm <= 220,
+  masa_corporal_g_max = masa_corporal_g <= 5500,
+  
+  # Chequear las categorías
+  categorias_especie = especie %in% c("Adelia", "Papúa", "Barbijo"),
+  categorias_isla = isla %in% c("Dream", "Torgersen", "Biscoe"),
+  categorias_sexo = sexo %in% c("hembra", "macho"),
+  categorias_anio = anio %in% c(2007, 2008, 2009)
+)
+
+salida_categoricas <- confront(dataset_sucio,reglas)
+
+summary(salida_categoricas)
+```
+
+Identificamos los casos que estan violando las reglas
+
+```{r}
+
+registros_categoricos_error <- violating(dataset_sucio, salida_categoricas)
+
+# Mostrar los registros
+registros_categoricos_error
+
+```
+
+> Si tenemos muchas categorías la documentación nos sugiere buscar en un libro de códigos externo que cuando trabajamos con encuestas o registros muy grandes es una excelente practica en esos casos usamos algo asi como
+
+regla \<- validator( x %in% read.csv("libro_de_codigos.csv")\$mi_codigo )
+
+##### assertr
+
+Betsy: Como hacer para que no detenga el analisis en el primer assert(in_set) ver si aplicar in_set()
+
+```{r}
+
+dataset_sucio  |> 
+  chain_start() |> 
+  
+  assert(not_na, everything(), error_fun = just_warn) |> # Valores faltantes en todo el dataset
+  assert_rows(col_concat, is_uniq, everything()) # Sin duplicados
+
+  assert(not_na, largo_pico_mm, alto_pico_mm, largo_aleta_mm, masa_corporal_g) |> # Valores faltantes en columnas numéricas
+  # Podemos setear los limites tanto superior como inferior
+  assert(within_bounds(30, 50), largo_pico_mm) |>
+  assert(within_bounds(10, 20), alto_pico_mm) |>
+  assert(within_bounds(120, 220), largo_aleta_mm) |>
+  assert(within_bounds(2000, 5500), masa_corporal_g) |> 
+  
+  # Chequear las categorías
+  assert(in_set(c("Adelia", "Papúa", "Barbijo")), especie)  |> 
+  assert(in_set(c("Dream", "Torgersen", "Biscoe")), isla)  |> 
+  assert(in_set(c("hembra", "macho")), sexo)  |> 
+  assert(in_set(c(2007, 2008, 2009)), anio) |> 
+  chain_end(error_fun = just_warn)
+
+```
+
+##### data.validator
+
+```{r}
+
+# Creamos un reporte de 0
+reporte <- data_validation_report()
+
+
+validate(dataset_sucio, name = "Verificación de variables categóricas")  |>
+  
+  validate_cols(not_na, everything(), description = "Ver si hay NA")  |> # Valores faltantes
+  assert_rows(duplicates_across_cols, in_set(FALSE), everything(), description = "Ver si hay duplicados") |> # Sin duplicados
+  
+  # Sin NA en las variables numéricas
+  validate_cols(not_na, largo_pico_mm, alto_pico_mm, largo_aleta_mm, masa_corporal_g, description = "NAs en variables numéricas") |> 
+  
+  # Chequear limite tanto superior como inferior
+  validate_cols(between(30, 50),largo_pico_mm, description = "Limites largo pico") |> 
+  validate_cols(between(10, 20),alto_pico_mm, description = "Limites alto pico") |>
+  validate_cols(between(120, 220),largo_aleta_mm, description = "Limites largo aleta") |>
+  validate_cols(between(2000, 5500),masa_corporal_g,  description = "Limites masa corporal") |> 
+  
+  # Chequear las categorías
+  validate_cols(in_set(c("Adelia", "Papúa", "Barbijo")), especie, description = "No es una especie esperada",)  |> 
+  validate_cols(in_set(c("Dream", "Torgersen", "Biscoe")), isla, description = "No es una isla esperada")  |> 
+  validate_cols(in_set(c("hembra", "macho")), sexo, description = "No es un sexo esperado")  |> 
+  validate_cols(in_set(c(2007, 2008, 2009)), anio, description = "No es un año esperado") |> 
+  add_results(reporte) 
+  
+
+# Mostrar reporte de validaciones
+
+print(reporte)
+
+```
+
+##### pointblank
+
+```{r}
+# Crear el agente de validación
+
+agente <- 
+  create_agent(tbl = dataset_sucio, 
+               label = "Agente de Chequeo de NAs, duplicados, consistencia numérica y variables categóricas") %>%
+  
+  col_vals_not_null(vars(everything()), label = "Ver si hay NA") |> # Datos faltantes
+  rows_distinct(everything())  |> # Sin duplicados
+  
+  # Valores faltantes en columnas numéricas
+  col_vals_not_null(vars(where(is.numeric)), 
+                    label = "Verificar si hay NA en columnas numéricas") |> 
+  # Chequear limite tanto superior como inferior
+  col_vals_between(vars(largo_pico_mm),left = 30,right = 50,label = "Limites largo pico",na_pass = TRUE) |> 
+  col_vals_between(vars(alto_pico_mm),left = 10,right = 20,label = "Limites alto pico",na_pass = TRUE) |> 
+  col_vals_between(vars(largo_aleta_mm),left = 120,right = 220,label = "Limites largo aleta",na_pass = TRUE) |> 
+  col_vals_between(vars(masa_corporal_g),left = 2000,right = 5500,label = "Limites masa corporal",na_pass = TRUE) |> 
+  
+  # Chequear las categorías
+  col_vals_in_set(columns =  especie, set = c("Adelia", "Papúa", "Barbijo")) |> 
+  col_vals_in_set(columns =  isla, set = c("Dream", "Torgersen", "Biscoe")) |> 
+  col_vals_in_set(columns =  sexo, set = c("hembra", "macho")) |> 
+  col_vals_in_set(columns =  anio, set = c(2007, 2008, 2009)) |> # aca la estamos tratando como categorica pero podria tratarse como date
+  interrogate()
+
+# Llamar al agente
+agente
+
+```

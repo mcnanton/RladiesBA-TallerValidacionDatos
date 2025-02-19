@@ -9,10 +9,13 @@ title: "Materiales"
 ```{=html}
 <iframe class="slides" src="/slides/index.html"></iframe>
 ```
+
+## Diapositivas de la presentación
+
+Accedé al script del taller en [este repositorio](https://github.com/mcnanton/RladiesBA-TallerValidacionDatos/)
+
 ## Video
 
 Podés acceder a la grabación del taller 👉🏼[aquí](https://www.youtube.com/watch?v=puykTjJ43Xs&ab_channel=RLadiesBuenosAires)👈🏼
 
-\\
 
-Visitá nuestro [canal de youtube](https://www.youtube.com/@RLadiesBuenosAires) para encontrar más videos como este.

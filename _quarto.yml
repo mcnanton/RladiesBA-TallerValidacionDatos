@@ -3,6 +3,7 @@ project:
   render:
     - "*.qmd"
     - "slides/*.qmd"
+    - "!actividades_taller_validacion.qmd"
   preview:
     port: 3434
     browser: true
