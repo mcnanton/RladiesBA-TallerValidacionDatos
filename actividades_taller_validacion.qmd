@@ -160,18 +160,6 @@ dataset_sucio |>
 ```
 
 
-Devuelve todo registro duplicado
-
-```{r}
-duplicados <- dataset_sucio[duplicated(dataset_sucio) | duplicated(dataset_sucio, fromLast = TRUE), ]
-print(duplicados)
-
-```
-
-```{r}
-anyDuplicated(dataset_sucio, fromLast = T)
-```
-
 También podemos hacer este chequeo con **janitor**, una biblioteca no especializada en validación de datos:
 
 ```{r}
@@ -235,8 +223,6 @@ get_results(reporte, unnest = FALSE)
 ```
 
 ##### pointblank
-
-Podemos usar la funcion rows_distinct que se puede aplicar directamente sobre el agente (como mostramos en este ejemplo) pero que tambien cuenta con versiones de testeo como test_row_distinct y expect_rows_distinct
 
 ```{r}
 
