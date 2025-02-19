@@ -240,7 +240,7 @@ agente
 
 ```
 
-### Consistencia
+### Exactitud
 
 #### Valores numéricos inadmisibles
 
@@ -419,7 +419,7 @@ agente
 
 ```
 
-### Exactitud
+### Consistencia
 
 #### Valores categoricos inadmisibles
 
