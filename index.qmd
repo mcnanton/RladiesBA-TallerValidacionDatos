@@ -1,5 +1,5 @@
 ---
-title: "Titulo del taller"
+title: "¡NA pasa nada!: aprende a validar datos con R"
 format: html
 editor: 
   markdown: 
