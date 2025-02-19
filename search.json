@@ -109,7 +109,7 @@
     "href": "setup.html",
     "title": "Instrucciones de configuración",
     "section": "",
-    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo Taller-validacion-ejercicios.rar y descomprimilo en tu computadora.",
+    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo actividades_taller_validacion.qmd del repositorio del taller",
     "crumbs": [
       "Instrucciones de configuración"
     ]
@@ -215,11 +215,21 @@
     ]
   },
   {
+    "objectID": "materiales.html#diapositivas-de-la-presentación-1",
+    "href": "materiales.html#diapositivas-de-la-presentación-1",
+    "title": "Materiales",
+    "section": "Diapositivas de la presentación",
+    "text": "Diapositivas de la presentación\nAccedé al script del taller en este repositorio",
+    "crumbs": [
+      "Materiales"
+    ]
+  },
+  {
     "objectID": "materiales.html#video",
     "href": "materiales.html#video",
     "title": "Materiales",
     "section": "Video",
-    "text": "Video\nPodés acceder a la grabación del taller 👉🏼aquí👈🏼\n\\\nVisitá nuestro canal de youtube para encontrar más videos como este.",
+    "text": "Video\nPodés acceder a la grabación del taller 👉🏼aquí👈🏼",
     "crumbs": [
       "Materiales"
     ]
@@ -369,14 +379,14 @@
     "href": "slides/index.html#no-te-pierdas-las-novedades",
     "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "¡No te pierdas las novedades!",
-    "text": "¡No te pierdas las novedades!\n\n\n¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\nVení a nuestro próximo meetup sobre tableros o dashboards con Quarto💜"
+    "text": "¡No te pierdas las novedades!\n\n\n¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\n¿Querés presentar un capítulo del club de lectura? Inscribite en este formulario!"
   },
   {
     "objectID": "slides/rladies.html",
     "href": "slides/rladies.html",
     "title": "Antes de que te vayas..",
     "section": "",
-    "text": "@rladiesba\n @RLadiesBA\n RLadies Buenos Aires\n @RLadiesBuenosAires\n https://rladiesba.netlify.app/\n\n\n\n\n\n¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\nVení a nuestro próximo meetup sobre tableros o dashboards con Quarto💜"
+    "text": "@rladiesba\n @RLadiesBA\n RLadies Buenos Aires\n @RLadiesBuenosAires\n https://rladiesba.netlify.app/\n\n\n\n\n\n¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\n¿Querés presentar un capítulo del club de lectura? Inscribite en este formulario!"
   },
   {
     "objectID": "slides/rladies.html#seguinos",
@@ -390,6 +400,6 @@
     "href": "slides/rladies.html#no-te-pierdas-las-novedades",
     "title": "Antes de que te vayas..",
     "section": "",
-    "text": "¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\nVení a nuestro próximo meetup sobre tableros o dashboards con Quarto💜"
+    "text": "¡El 2025 se viene con todo!\n\nLanzaremos el club de lectura del libro Mastering Shiny de Hadley Wickham. Sumate para aprender shiny entre todes.\n¿Querés presentar un capítulo del club de lectura? Inscribite en este formulario!"
   }
 ]
