@@ -49,6 +49,13 @@
     "text": "“A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
   },
   {
+    "objectID": "slides/slide1.html#section",
+    "href": "slides/slide1.html#section",
+    "title": "Introducción a la validación de datos",
+    "section": "",
+    "text": "Mariño, J.; Kasbohm, E.; Struckmann, S.; Kapsner, L.A.; Schmidt, C.O. R Packages for Data Quality Assessments and Data Monitoring: A Software Scoping Review with Recommendations for Future Developments. Appl. Sci. 2022, 12, 4238. https://doi.org/10.3390/app12094238"
+  },
+  {
     "objectID": "slides/slide1.html#a-validar",
     "href": "slides/slide1.html#a-validar",
     "title": "Introducción a la validación de datos",
@@ -109,7 +116,7 @@
     "href": "setup.html",
     "title": "Instrucciones de configuración",
     "section": "",
-    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo actividades_taller_validacion.qmd del repositorio del taller",
+    "text": "Antes del taller, por favor completa los siguientes pasos:\n\n1. Software\nDescargá e instalá las últimas versiones de R, RStudio y Quarto:\n\nR 4.2.3 o superior: https://cran.r-project.org\nRStudio 2024.04.0 or superior: https://posit.co/download/rstudio-desktop\n\n\n\n2. Paquetes\nInstalá los siguientes paquetes copiando y pegando el siguiente código en la consola de RStudio:\n\npaquetes_lista &lt;- c(\n  \"dplyr\", \"datos\", \"messy\", \"pointblank\", \"data.validator\", \"assertr\", \"validate\", \"janitor\"\n)\ninstall.packages(paquetes_lista)\n\n\n\n3. Ejercicios\nDescargá el archivo actividades_taller_validacion.qmd del repositorio del taller",
     "crumbs": [
       "Instrucciones de configuración"
     ]
@@ -215,11 +222,11 @@
     ]
   },
   {
-    "objectID": "materiales.html#diapositivas-de-la-presentación-1",
-    "href": "materiales.html#diapositivas-de-la-presentación-1",
+    "objectID": "materiales.html#código",
+    "href": "materiales.html#código",
     "title": "Materiales",
-    "section": "Diapositivas de la presentación",
-    "text": "Diapositivas de la presentación\nAccedé al script del taller en este repositorio",
+    "section": "Código",
+    "text": "Código\nAccedé al script del taller en este repositorio",
     "crumbs": [
       "Materiales"
     ]
@@ -352,6 +359,13 @@
     "title": "¡NA pasa nada!: aprende a validar datos con R",
     "section": "“A data quality framework for observational health research data collections with software implementations in R”",
     "text": "“A data quality framework for observational health research data collections with software implementations in R”\nSchmidt, C.O.; Struckmann, S.; Enzenbach, C.; Reineke, A.; Stausberg, J.; Damerow, S.; Huebner, M.; Schmidt, B.; Sauerbrei, W.; Richter, A. BMC Med. Res. Methodol. 2021, 21, 63. [CrossRef]\n\n\nIntegridad: ¿En qué grado los datos cumplen requisitos técnicos y estructurales?\nCompletitud: ¿En qué grado los valores esperados están presentes?\nConsistencia: ¿En qué grado los valores de los datos están libres de rupturas de convenciones o contradicciones?\nExactitud: ¿Cuál es el grado de acuerdo entre distribuciones y asociaciones observadas y esperadas?"
+  },
+  {
+    "objectID": "slides/index.html#section-1",
+    "href": "slides/index.html#section-1",
+    "title": "¡NA pasa nada!: aprende a validar datos con R",
+    "section": "",
+    "text": "Mariño, J.; Kasbohm, E.; Struckmann, S.; Kapsner, L.A.; Schmidt, C.O. R Packages for Data Quality Assessments and Data Monitoring: A Software Scoping Review with Recommendations for Future Developments. Appl. Sci. 2022, 12, 4238. https://doi.org/10.3390/app12094238"
   },
   {
     "objectID": "slides/index.html#a-validar",
