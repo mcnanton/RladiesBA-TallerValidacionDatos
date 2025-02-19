@@ -85,6 +85,7 @@ Iannone R, Vargas M, Choe J (2025). pointblank: Data Validation and Organization
 -   Funciones específicas que cada uno provee, especialmente **funciones de predicado** (funciones que devuelven TRUE o FALSE en base al cumplimiento o no de una o más condiciones)
 -   Tipo de reportes que generan
 -   Formato de reportes generados
+-   Gestión de errores y advertencias
 :::
 
 ## ¿Por qué creen que tiene sentido usar una biblioteca de este tipo?

@@ -301,11 +301,6 @@ dataset_sucio |>
 
 ##### validate
 
-Estas mismas transformaciones que creamos arriba con `across` podriamos aplicarlas como reglas usando el paquete validate en el que
-
-\- Indique los valores NA por la media de cada columna
-
-\- Indique cuantos casos superan por un factor de 1.5 veces el rango intercuartílico
 
 ```{r}
 reglas <- validator(
@@ -338,6 +333,8 @@ summary(resultado)
 
 ##### assertr
 
+hacemos lo mismo con assert usando el predicaso within_bounds
+
 ```{r}
 
 dataset_sucio |> 
@@ -365,6 +362,7 @@ dataset_sucio |>
 
 reporte <- data_validation_report()
 
+# generar una funcion predicado para valores entre a y b
 between <- function(a, b) {
   function(x) { 
     # Asegurarse de que los NA no generen un error en la validación
@@ -437,48 +435,10 @@ dataset_sucio  |>
 
 ```
 
-```{r}
-# dataset_sucio %>%
-#    mutate(
-#     # arreglamos especie
-#     especie = str_replace_all(especie, "[^a-zA-ZáéíóúÁÉÍÓÚ]", ""),
-#     especie = str_replace_all(especie, "(?i)adelia", "Adelia"),
-#     especie = str_replace_all(especie, "(?i)papúa|papua", "Papúa"),
-#     especie = str_replace_all(especie, "(?i)barbijo", "Barbijo"),
-#     especie = as.factor(especie),
-#     
-#     # arreglamos isla
-#     isla = str_replace_all(isla, "[^a-zA-Z]", ""),
-#     isla = str_replace_all(isla, "(?i)dream", "Dream"),
-#     isla = str_replace_all(isla, "(?i)torgersen", "Torgersen"),
-#     isla = str_replace_all(isla, "(?i)biscoe", "Biscoe"),
-#     isla = as.factor(isla),
-#     
-#     # arreglamos sexo
-#     sexo = str_replace_all(sexo, "[^a-zA-Z]", ""),
-#     sexo = str_replace_all(sexo, "(?i)macho", "macho"),
-#     sexo = str_replace_all(sexo, "(?i)hembra", "hembra"),
-#     sexo = if_else(sexo == "NA", NA_character_,sexo),
-#     sexo = as.factor(sexo),
-#     
-#     # arreglamos anio 
-#     anio = str_replace_all(anio, "[^0-9]", ""),  
-#     anio = case_when(
-#       anio %in% c("2007","20070") ~  "2007",
-#       anio %in% c("20080") ~ "2008",
-#       anio %in% c("20090") ~"2009",
-#       TRUE ~anio),
-#     anio = ifelse(anio %in% c("2007", "2008", "2009"), anio, NA),  
-#     anio = as.factor(anio)  
-#   ) |> 
-#   select(especie,isla,sexo,anio) |> 
-#   summary()
 
-```
 
 ##### validate
 
-Con validate podemos chequear de una lista de códigos con
 
 ```{r}
 
@@ -534,7 +494,6 @@ regla \<- validator( x %in% read.csv("libro_de_codigos.csv")\$mi_codigo )
 
 ##### assertr
 
-Betsy: Como hacer para que no detenga el analisis en el primer assert(in_set) ver si aplicar in_set()
 
 ```{r}
 
