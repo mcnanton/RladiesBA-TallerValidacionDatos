@@ -8,7 +8,7 @@
 
 🐱 [Sitio del taller](https://mcnanton.github.io/RladiesBA-TallerValidacionDatos/)
 
-\
+
 
 ## Sobre este taller
 
